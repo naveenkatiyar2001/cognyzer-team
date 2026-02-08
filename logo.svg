@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAAD14"/>
+      <stop offset="40%" stop-color="#F56C42"/>
+      <stop offset="75%" stop-color="#C850C0"/>
+      <stop offset="100%" stop-color="#7B2FBE"/>
+    </linearGradient>
+  </defs>
+  <!-- Upper arm of K -->
+  <polygon points="10,32 26,32 48,4 32,4" fill="url(#logoGrad)"/>
+  <!-- Lower arm of K -->
+  <polygon points="10,32 26,32 48,60 32,60" fill="url(#logoGrad)"/>
+</svg>
