@@ -28,25 +28,24 @@ body::before{
 }
 .page-wrapper{max-width:1200px;margin:0 auto;padding:30px 24px 40px}
 
-/* ===== HERO SCENE — PURPLE MOUNTAIN PANORAMA ===== */
+/* ===== HERO SCENE — SHARP MOUNTAIN PANORAMA ===== */
 .hero-scene{
   text-align:center;position:relative;overflow:hidden;
   background:linear-gradient(180deg,
-    #0d0b1a 0%,#110e24 5%,#16112e 10%,#1c1540 18%,
-    #241a52 26%,#2d1f65 34%,#3a2878 42%,
-    #4a3590 50%,#5c42a5 58%,#6e50b8 65%,
-    #7a5cc4 70%,#8b6ad0 75%,#9a78d8 80%,
-    #a888dd 84%,#b89ae0 88%,#c8ace3 92%,
-    #d8bee6 96%,#e8d0ea 100%);
+    #1a1040 0%,#1e1348 4%,#221650 8%,#281a5a 13%,
+    #2f1e66 18%,#362372 24%,#3e2880 30%,
+    #4a3594 38%,#5640a5 46%,#644db5 54%,
+    #7560c4 62%,#8878d0 70%,#9c90da 78%,
+    #b0a8e2 86%,#c4bfea 92%,#d8d5f0 100%);
   padding-bottom:0;
 }
 
-/* Ambient glow */
+/* Ambient horizon glow */
 .hero-scene::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
   background:
-    radial-gradient(ellipse at 50% 85%, rgba(200,170,240,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 60%, rgba(100,60,180,0.1) 0%, transparent 40%),
-    radial-gradient(ellipse at 80% 60%, rgba(120,80,200,0.08) 0%, transparent 40%);
+    radial-gradient(ellipse 120% 40% at 50% 90%, rgba(200,190,240,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 30% at 30% 75%, rgba(150,120,220,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 30% at 70% 75%, rgba(150,120,220,0.1) 0%, transparent 60%);
   z-index:0}
 
 /* Stars */
@@ -72,40 +71,32 @@ body::before{
   animation:twinkle 6s ease-in-out infinite alternate-reverse}
 @keyframes twinkle{0%{opacity:0.6}100%{opacity:1}}
 
-/* SVG Mountain layers */
+/* SVG Mountain + Cloud layers */
 .hero-scene .mountain-layer{position:absolute;bottom:0;left:0;right:0;z-index:2}
 .hero-scene .mountain-layer svg{display:block;width:100%}
+.hero-scene .cloud-layer{position:absolute;bottom:0;left:0;right:0;z-index:3}
+.hero-scene .cloud-layer svg{display:block;width:100%}
 
-/* Fog layers — drifting haze between mountains */
-.hero-scene .fog{position:absolute;left:-5%;right:-5%;z-index:3;pointer-events:none}
-.hero-scene .fog-1{bottom:220px;height:120px;
-  background:linear-gradient(180deg,transparent,rgba(200,170,240,0.08) 30%,rgba(180,150,220,0.12) 50%,rgba(200,170,240,0.08) 70%,transparent);
-  animation:fogDrift1 18s ease-in-out infinite alternate}
-.hero-scene .fog-2{bottom:130px;height:100px;
-  background:linear-gradient(180deg,transparent,rgba(140,100,200,0.1) 30%,rgba(120,80,180,0.15) 55%,rgba(140,100,200,0.1) 75%,transparent);
-  animation:fogDrift2 22s ease-in-out infinite alternate}
-.hero-scene .fog-3{bottom:50px;height:110px;
-  background:linear-gradient(180deg,transparent,rgba(80,50,130,0.12) 25%,rgba(60,35,110,0.2) 50%,rgba(50,30,100,0.25) 80%,transparent);
-  animation:fogDrift3 26s ease-in-out infinite alternate}
-.hero-scene .fog-4{bottom:0;height:80px;
-  background:linear-gradient(180deg,transparent 0%,rgba(13,11,26,0.4) 40%,rgba(8,14,26,0.8) 100%);
-  z-index:4}
-@keyframes fogDrift1{0%{transform:translateX(-4%);opacity:0.5}100%{transform:translateX(4%);opacity:0.9}}
-@keyframes fogDrift2{0%{transform:translateX(3%);opacity:0.4}100%{transform:translateX(-3%);opacity:0.85}}
+/* Fog layers — atmospheric haze */
+.hero-scene .fog{position:absolute;left:-5%;right:-5%;z-index:4;pointer-events:none}
+.hero-scene .fog-1{bottom:260px;height:140px;
+  background:linear-gradient(180deg,transparent,rgba(190,175,230,0.06) 25%,rgba(180,160,225,0.12) 50%,rgba(190,175,230,0.06) 75%,transparent);
+  animation:fogDrift1 20s ease-in-out infinite alternate}
+.hero-scene .fog-2{bottom:160px;height:120px;
+  background:linear-gradient(180deg,transparent,rgba(140,115,200,0.08) 30%,rgba(120,95,185,0.14) 55%,rgba(140,115,200,0.08) 75%,transparent);
+  animation:fogDrift2 26s ease-in-out infinite alternate}
+.hero-scene .fog-3{bottom:70px;height:120px;
+  background:linear-gradient(180deg,transparent,rgba(80,55,145,0.1) 25%,rgba(60,40,120,0.18) 55%,rgba(50,30,100,0.22) 80%,transparent);
+  animation:fogDrift3 30s ease-in-out infinite alternate}
+.hero-scene .fog-4{bottom:0;height:60px;
+  background:linear-gradient(180deg,transparent 0%,rgba(8,14,26,0.5) 50%,rgba(8,14,26,0.95) 100%);
+  z-index:5}
+@keyframes fogDrift1{0%{transform:translateX(-3%);opacity:0.5}100%{transform:translateX(3%);opacity:0.9}}
+@keyframes fogDrift2{0%{transform:translateX(2%);opacity:0.4}100%{transform:translateX(-2%);opacity:0.85}}
 @keyframes fogDrift3{0%{transform:translateX(-2%);opacity:0.6}100%{transform:translateX(2%);opacity:1}}
 
-/* Cloud accents */
-.hero-scene .cloud{position:absolute;z-index:3;pointer-events:none;border-radius:50%;opacity:0.06;
-  background:radial-gradient(ellipse,rgba(255,255,255,0.5),transparent 70%)}
-.hero-scene .cloud-1{width:400px;height:80px;top:35%;left:5%;animation:cloudFloat1 30s ease-in-out infinite alternate}
-.hero-scene .cloud-2{width:300px;height:60px;top:40%;right:10%;animation:cloudFloat2 25s ease-in-out infinite alternate}
-.hero-scene .cloud-3{width:500px;height:70px;top:50%;left:20%;animation:cloudFloat3 35s ease-in-out infinite alternate}
-@keyframes cloudFloat1{0%{transform:translateX(0)}100%{transform:translateX(40px)}}
-@keyframes cloudFloat2{0%{transform:translateX(0)}100%{transform:translateX(-30px)}}
-@keyframes cloudFloat3{0%{transform:translateX(0)}100%{transform:translateX(25px)}}
-
 /* Header content */
-.header-content{position:relative;z-index:5;padding:70px 40px 40px}
+.header-content{position:relative;z-index:6;padding:70px 40px 40px}
 .header-logo{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:8px}
 .header-logo img{width:80px;height:80px;filter:drop-shadow(0 4px 24px rgba(250,173,20,0.35));transition:transform 0.3s}
 .header-logo:hover img{transform:scale(1.05)}
@@ -122,7 +113,7 @@ body::before{
 .stats-bar{
   display:flex;justify-content:center;gap:16px;flex-wrap:wrap;max-width:960px;
   padding:28px 24px;margin:30px auto 40px;
-  position:relative;z-index:5;
+  position:relative;z-index:6;
   background:rgba(15,12,30,0.55);
   backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-radius:16px;
@@ -400,32 +391,47 @@ body::before{
 <body>
 <div class="hero-scene">
 <div class="stars"></div>
-<!-- Cloud accents -->
-<div class="cloud cloud-1"></div>
-<div class="cloud cloud-2"></div>
-<div class="cloud cloud-3"></div>
-<!-- Mountain SVG layers — violet/purple palette inspired by foggy mountain panorama -->
+<!-- Mountain SVG layers — sharp jagged peaks, violet palette -->
 <div class="mountain-layer">
-<svg viewBox="0 0 1440 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Layer 1: Very far mountains (lightest, most faded) -->
-<path d="M0,420 L0,220 Q30,180 60,200 Q110,130 160,180 Q220,90 280,155 Q330,100 380,140 Q440,60 500,120 Q550,80 600,105 Q680,30 760,90 Q820,55 880,80 Q950,15 1030,70 Q1090,35 1150,60 Q1210,25 1270,55 Q1340,40 1400,70 L1440,60 L1440,420 Z" fill="rgba(200,170,230,0.18)"/>
+<svg viewBox="0 0 1440 480" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Layer 1: Very far mountains (lightest, most faded, ghostly) -->
+<path d="M0,480 L0,260 L25,250 L50,200 L65,220 L90,160 L110,190 L135,130 L155,175 L180,145 L210,100 L230,150 L260,120 L285,80 L310,140 L340,110 L370,65 L395,120 L420,90 L450,135 L475,105 L510,60 L535,110 L560,85 L590,130 L620,75 L650,115 L680,55 L710,100 L740,70 L770,120 L800,50 L825,95 L860,70 L890,110 L920,45 L950,90 L980,65 L1010,105 L1040,55 L1070,95 L1100,40 L1130,85 L1160,60 L1190,100 L1220,50 L1250,90 L1280,65 L1310,95 L1340,55 L1370,80 L1400,60 L1440,75 L1440,480 Z" fill="rgba(190,175,220,0.15)"/>
 <!-- Layer 2: Far mountains -->
-<path d="M0,420 L0,260 Q50,200 100,235 Q160,150 220,210 Q290,120 360,185 Q420,140 480,170 Q560,90 640,150 Q710,110 780,140 Q860,65 940,125 Q1010,85 1080,120 Q1160,70 1240,110 Q1310,90 1380,120 L1440,105 L1440,420 Z" fill="rgba(160,130,200,0.22)"/>
+<path d="M0,480 L0,300 L30,280 L55,240 L80,265 L110,200 L140,245 L165,190 L195,230 L225,165 L250,215 L280,175 L315,130 L345,200 L375,160 L405,110 L435,180 L460,140 L495,190 L525,125 L555,175 L585,135 L620,95 L655,165 L685,120 L715,170 L745,105 L780,155 L810,115 L840,160 L870,90 L905,145 L935,110 L965,155 L1000,85 L1030,140 L1060,100 L1095,150 L1125,95 L1155,135 L1190,80 L1220,130 L1250,100 L1285,140 L1315,90 L1345,120 L1380,95 L1410,125 L1440,100 L1440,480 Z" fill="rgba(160,140,205,0.2)"/>
 <!-- Layer 3: Mid-far mountains -->
-<path d="M0,420 L0,290 Q70,230 140,268 Q210,180 280,245 Q350,200 420,235 Q500,160 580,215 Q650,180 720,205 Q800,130 880,190 Q950,155 1020,185 Q1100,140 1180,175 Q1260,155 1340,180 L1440,165 L1440,420 Z" fill="rgba(120,90,170,0.3)"/>
+<path d="M0,480 L0,330 L40,305 L70,270 L95,295 L130,235 L160,275 L190,220 L220,260 L260,195 L290,250 L320,210 L355,170 L390,235 L420,195 L455,150 L490,220 L520,180 L555,225 L590,165 L625,210 L660,175 L695,135 L730,200 L760,160 L800,205 L835,150 L870,195 L905,155 L940,200 L975,140 L1010,185 L1045,150 L1080,195 L1115,135 L1150,180 L1185,145 L1220,185 L1260,130 L1295,175 L1330,145 L1365,180 L1400,140 L1440,165 L1440,480 Z" fill="rgba(130,108,185,0.28)"/>
 <!-- Layer 4: Mid mountains -->
-<path d="M0,420 L0,310 Q80,270 160,295 Q240,230 320,275 Q400,245 480,268 Q560,210 640,255 Q720,230 800,250 Q880,195 960,240 Q1040,215 1120,245 Q1200,210 1280,240 Q1360,225 1440,245 L1440,420 Z" fill="rgba(85,60,140,0.4)"/>
+<path d="M0,480 L0,350 L35,330 L65,295 L100,320 L135,270 L170,305 L200,255 L240,290 L275,240 L310,280 L345,245 L380,210 L415,265 L450,230 L490,195 L525,255 L560,220 L600,260 L640,210 L675,250 L710,215 L745,185 L785,240 L820,205 L860,245 L900,195 L940,235 L975,200 L1015,240 L1050,195 L1090,230 L1125,200 L1160,235 L1200,190 L1240,225 L1275,200 L1315,230 L1350,195 L1390,220 L1440,210 L1440,480 Z" fill="rgba(100,78,160,0.38)"/>
 <!-- Layer 5: Near-mid mountains -->
-<path d="M0,420 L0,330 Q100,290 200,318 Q300,260 400,305 Q500,280 600,300 Q700,255 800,290 Q900,270 1000,285 Q1100,260 1200,285 Q1300,275 1440,290 L1440,420 Z" fill="rgba(55,35,100,0.55)"/>
-<!-- Layer 6: Near mountains (dark, prominent) -->
-<path d="M0,420 L0,355 Q100,325 200,348 Q300,310 400,340 Q500,320 600,335 Q700,305 800,330 Q900,318 1000,328 Q1100,312 1200,330 Q1300,322 1440,335 L1440,420 Z" fill="rgba(30,20,60,0.7)"/>
-<!-- Layer 7: Closest foreground (darkest) -->
-<path d="M0,420 L0,375 Q60,365 120,372 Q180,358 240,368 Q300,355 360,365 Q420,352 480,362 Q540,350 600,360 Q660,348 720,358 Q780,345 840,355 Q900,348 960,355 Q1020,342 1080,352 Q1140,345 1200,352 Q1260,340 1320,348 Q1380,342 1440,348 L1440,420 Z" fill="rgba(13,11,26,0.9)"/>
-<!-- Ground base -->
-<path d="M0,420 L0,395 Q120,388 240,393 Q360,385 480,390 Q600,383 720,388 Q840,382 960,387 Q1080,380 1200,386 Q1320,382 1440,388 L1440,420 Z" fill="#080e1a"/>
+<path d="M0,480 L0,370 L45,350 L80,320 L120,345 L155,300 L195,330 L230,290 L270,320 L310,280 L350,310 L390,275 L430,250 L470,300 L510,270 L555,240 L595,290 L635,260 L680,295 L720,255 L760,285 L800,250 L845,230 L885,275 L925,248 L970,280 L1010,245 L1050,275 L1095,240 L1135,270 L1180,238 L1220,265 L1265,240 L1310,260 L1355,235 L1400,258 L1440,248 L1440,480 Z" fill="rgba(70,50,130,0.5)"/>
+<!-- Layer 6: Near mountains (dark, prominent, sharp) -->
+<path d="M0,480 L0,385 L40,370 L75,345 L115,368 L150,330 L190,355 L230,318 L270,345 L315,310 L355,338 L400,305 L440,330 L480,300 L520,325 L560,295 L605,320 L650,290 L695,315 L740,285 L785,310 L825,282 L870,308 L915,278 L960,305 L1005,280 L1050,302 L1095,275 L1140,298 L1185,272 L1230,295 L1275,270 L1320,292 L1365,268 L1410,288 L1440,278 L1440,480 Z" fill="rgba(40,25,80,0.65)"/>
+<!-- Layer 7: Foreground silhouette -->
+<path d="M0,480 L0,400 L50,390 L90,375 L130,392 L170,365 L210,385 L255,360 L300,380 L345,358 L390,375 L435,355 L480,372 L525,350 L570,368 L620,345 L665,365 L710,342 L760,360 L810,340 L860,358 L905,338 L955,355 L1000,335 L1050,352 L1100,332 L1150,348 L1200,330 L1250,346 L1300,328 L1350,344 L1400,326 L1440,340 L1440,480 Z" fill="rgba(18,12,40,0.82)"/>
+<!-- Layer 8: Closest ground -->
+<path d="M0,480 L0,420 L60,412 L120,405 L180,415 L240,402 L300,412 L360,400 L420,410 L480,398 L540,408 L600,396 L660,406 L720,394 L780,404 L840,393 L900,403 L960,392 L1020,400 L1080,390 L1140,398 L1200,388 L1260,396 L1320,386 L1380,394 L1440,388 L1440,480 Z" fill="#080e1a"/>
 </svg>
 </div>
-<!-- Fog layers for 3D depth -->
+<!-- Cloud SVG layer — soft glowing clouds between mountains -->
+<div class="cloud-layer">
+<svg viewBox="0 0 1440 480" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="cg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(180,200,255,0.12)"/><stop offset="100%" stop-color="rgba(180,200,255,0)"/></radialGradient>
+<radialGradient id="cg2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(160,180,240,0.1)"/><stop offset="100%" stop-color="rgba(160,180,240,0)"/></radialGradient>
+</defs>
+<!-- Cloud cluster left -->
+<ellipse cx="180" cy="260" rx="160" ry="28" fill="url(#cg1)"><animate attributeName="cx" values="180;220;180" dur="25s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="240" cy="255" rx="120" ry="22" fill="url(#cg1)"><animate attributeName="cx" values="240;270;240" dur="20s" repeatCount="indefinite"/></ellipse>
+<!-- Cloud cluster right -->
+<ellipse cx="1100" cy="240" rx="180" ry="30" fill="url(#cg2)"><animate attributeName="cx" values="1100;1060;1100" dur="30s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="1180" cy="245" rx="130" ry="24" fill="url(#cg2)"><animate attributeName="cx" values="1180;1150;1180" dur="22s" repeatCount="indefinite"/></ellipse>
+<!-- Cloud wisps mid -->
+<ellipse cx="650" cy="290" rx="200" ry="20" fill="url(#cg1)"><animate attributeName="cx" values="650;690;650" dur="28s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="450" cy="320" rx="140" ry="18" fill="url(#cg2)"><animate attributeName="cx" values="450;480;450" dur="24s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="900" cy="310" rx="160" ry="22" fill="url(#cg1)"><animate attributeName="cx" values="900;870;900" dur="26s" repeatCount="indefinite"/></ellipse>
+</svg>
+</div>
+<!-- Fog layers for atmospheric depth -->
 <div class="fog fog-1"></div>
 <div class="fog fog-2"></div>
 <div class="fog fog-3"></div>
