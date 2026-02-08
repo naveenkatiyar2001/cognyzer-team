@@ -28,80 +28,114 @@ body::before{
 }
 .page-wrapper{max-width:1200px;margin:0 auto;padding:30px 24px 40px}
 
-/* ===== HERO SCENE — MOUNTAIN PANORAMA (extends through stats) ===== */
+/* ===== HERO SCENE — PURPLE MOUNTAIN PANORAMA ===== */
 .hero-scene{
   text-align:center;position:relative;overflow:hidden;
-  background:linear-gradient(180deg,#040a14 0%,#06101e 8%,#0a1628 18%,#0e1d35 30%,#142848 45%,#1a3560 58%,#214170 68%,#2a4f80 76%,#1e3a5f 88%,#0f2847 100%);
+  background:linear-gradient(180deg,
+    #0d0b1a 0%,#110e24 5%,#16112e 10%,#1c1540 18%,
+    #241a52 26%,#2d1f65 34%,#3a2878 42%,
+    #4a3590 50%,#5c42a5 58%,#6e50b8 65%,
+    #7a5cc4 70%,#8b6ad0 75%,#9a78d8 80%,
+    #a888dd 84%,#b89ae0 88%,#c8ace3 92%,
+    #d8bee6 96%,#e8d0ea 100%);
   padding-bottom:0;
 }
+
+/* Ambient glow */
 .hero-scene::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
   background:
-    linear-gradient(175deg, transparent 40%, rgba(15,40,71,0.3) 42%, transparent 44%),
-    linear-gradient(160deg, transparent 30%, rgba(30,58,95,0.5) 33%, transparent 36%),
-    linear-gradient(170deg, transparent 50%, rgba(20,45,75,0.4) 53%, transparent 56%);
+    radial-gradient(ellipse at 50% 85%, rgba(200,170,240,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 60%, rgba(100,60,180,0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 60%, rgba(120,80,200,0.08) 0%, transparent 40%);
   z-index:0}
 
 /* Stars */
-.hero-scene .stars{position:absolute;top:0;left:0;right:0;height:55%;z-index:0;overflow:hidden}
+.hero-scene .stars{position:absolute;top:0;left:0;right:0;height:45%;z-index:1;overflow:hidden}
 .hero-scene .stars::before{content:'';position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;
   box-shadow:
-    80px 20px 0 0 rgba(255,255,255,0.6),200px 40px 0 0 rgba(255,255,255,0.4),
-    350px 15px 0 0 rgba(255,255,255,0.7),500px 35px 0 0 rgba(255,255,255,0.3),
-    650px 25px 0 0 rgba(255,255,255,0.5),120px 60px 0 0 rgba(255,255,255,0.4),
-    400px 50px 0 0 rgba(255,255,255,0.6),750px 30px 0 0 rgba(255,255,255,0.35),
-    900px 18px 0 0 rgba(255,255,255,0.5),300px 70px 0 0 rgba(255,255,255,0.3),
-    550px 45px 0 0 rgba(255,255,255,0.55),1000px 22px 0 0 rgba(255,255,255,0.45),
-    1100px 55px 0 0 rgba(255,255,255,0.35),1200px 12px 0 0 rgba(255,255,255,0.6),
-    850px 65px 0 0 rgba(255,255,255,0.25),170px 35px 0 0 rgba(255,255,255,0.5),
-    450px 18px 0 0 rgba(255,255,255,0.3),720px 55px 0 0 rgba(255,255,255,0.4),
-    1050px 40px 0 0 rgba(255,255,255,0.55),60px 48px 0 0 rgba(255,255,255,0.3);
+    80px 15px 0 0 rgba(255,255,255,0.7),180px 8px 0 0 rgba(255,255,255,0.5),
+    320px 22px 0 0 rgba(255,255,255,0.6),470px 12px 0 0 rgba(255,255,255,0.4),
+    620px 18px 0 0 rgba(255,255,255,0.65),140px 40px 0 0 rgba(255,255,255,0.3),
+    750px 10px 0 0 rgba(255,255,255,0.55),900px 25px 0 0 rgba(255,255,255,0.4),
+    1050px 14px 0 0 rgba(255,255,255,0.6),250px 35px 0 0 rgba(255,255,255,0.35),
+    1150px 20px 0 0 rgba(255,255,255,0.5),420px 6px 0 0 rgba(255,255,255,0.45),
+    560px 30px 0 0 rgba(255,255,255,0.3),830px 5px 0 0 rgba(255,255,255,0.55),
+    1000px 38px 0 0 rgba(255,255,255,0.25),690px 42px 0 0 rgba(255,255,255,0.35),
+    50px 28px 0 0 rgba(255,255,255,0.5),380px 48px 0 0 rgba(255,255,255,0.2);
   animation:twinkle 4s ease-in-out infinite alternate}
-@keyframes twinkle{0%{opacity:0.7}100%{opacity:1}}
+.hero-scene .stars::after{content:'';position:absolute;width:1px;height:1px;background:#fff;border-radius:50%;
+  box-shadow:
+    110px 10px 0 0 rgba(255,255,255,0.3),260px 30px 0 0 rgba(255,255,255,0.2),
+    490px 5px 0 0 rgba(255,255,255,0.35),700px 20px 0 0 rgba(255,255,255,0.15),
+    950px 8px 0 0 rgba(255,255,255,0.25),1200px 35px 0 0 rgba(255,255,255,0.2),
+    40px 45px 0 0 rgba(255,255,255,0.3),580px 15px 0 0 rgba(255,255,255,0.25);
+  animation:twinkle 6s ease-in-out infinite alternate-reverse}
+@keyframes twinkle{0%{opacity:0.6}100%{opacity:1}}
 
-/* Mountains */
-.hero-scene .mountain-layer{position:absolute;bottom:0;left:0;right:0;z-index:1}
+/* SVG Mountain layers */
+.hero-scene .mountain-layer{position:absolute;bottom:0;left:0;right:0;z-index:2}
 .hero-scene .mountain-layer svg{display:block;width:100%}
 
-/* Fog layers */
-.hero-scene .fog{position:absolute;left:0;right:0;z-index:2;height:80px;pointer-events:none}
-.hero-scene .fog-1{bottom:120px;background:linear-gradient(180deg,transparent 0%,rgba(15,30,55,0.15) 40%,rgba(15,30,55,0.25) 70%,transparent 100%);animation:fogDrift1 12s ease-in-out infinite alternate}
-.hero-scene .fog-2{bottom:60px;background:linear-gradient(180deg,transparent 0%,rgba(10,22,40,0.2) 50%,rgba(10,22,40,0.35) 80%,transparent 100%);animation:fogDrift2 16s ease-in-out infinite alternate}
-.hero-scene .fog-3{bottom:0;height:100px;background:linear-gradient(180deg,transparent 0%,rgba(8,14,26,0.3) 40%,rgba(8,14,26,0.6) 100%);animation:fogDrift3 20s ease-in-out infinite alternate}
-@keyframes fogDrift1{0%{transform:translateX(-3%);opacity:0.6}100%{transform:translateX(3%);opacity:0.9}}
-@keyframes fogDrift2{0%{transform:translateX(2%);opacity:0.5}100%{transform:translateX(-2%);opacity:0.8}}
-@keyframes fogDrift3{0%{transform:translateX(-1%);opacity:0.7}100%{transform:translateX(1%);opacity:1}}
+/* Fog layers — drifting haze between mountains */
+.hero-scene .fog{position:absolute;left:-5%;right:-5%;z-index:3;pointer-events:none}
+.hero-scene .fog-1{bottom:220px;height:120px;
+  background:linear-gradient(180deg,transparent,rgba(200,170,240,0.08) 30%,rgba(180,150,220,0.12) 50%,rgba(200,170,240,0.08) 70%,transparent);
+  animation:fogDrift1 18s ease-in-out infinite alternate}
+.hero-scene .fog-2{bottom:130px;height:100px;
+  background:linear-gradient(180deg,transparent,rgba(140,100,200,0.1) 30%,rgba(120,80,180,0.15) 55%,rgba(140,100,200,0.1) 75%,transparent);
+  animation:fogDrift2 22s ease-in-out infinite alternate}
+.hero-scene .fog-3{bottom:50px;height:110px;
+  background:linear-gradient(180deg,transparent,rgba(80,50,130,0.12) 25%,rgba(60,35,110,0.2) 50%,rgba(50,30,100,0.25) 80%,transparent);
+  animation:fogDrift3 26s ease-in-out infinite alternate}
+.hero-scene .fog-4{bottom:0;height:80px;
+  background:linear-gradient(180deg,transparent 0%,rgba(13,11,26,0.4) 40%,rgba(8,14,26,0.8) 100%);
+  z-index:4}
+@keyframes fogDrift1{0%{transform:translateX(-4%);opacity:0.5}100%{transform:translateX(4%);opacity:0.9}}
+@keyframes fogDrift2{0%{transform:translateX(3%);opacity:0.4}100%{transform:translateX(-3%);opacity:0.85}}
+@keyframes fogDrift3{0%{transform:translateX(-2%);opacity:0.6}100%{transform:translateX(2%);opacity:1}}
+
+/* Cloud accents */
+.hero-scene .cloud{position:absolute;z-index:3;pointer-events:none;border-radius:50%;opacity:0.06;
+  background:radial-gradient(ellipse,rgba(255,255,255,0.5),transparent 70%)}
+.hero-scene .cloud-1{width:400px;height:80px;top:35%;left:5%;animation:cloudFloat1 30s ease-in-out infinite alternate}
+.hero-scene .cloud-2{width:300px;height:60px;top:40%;right:10%;animation:cloudFloat2 25s ease-in-out infinite alternate}
+.hero-scene .cloud-3{width:500px;height:70px;top:50%;left:20%;animation:cloudFloat3 35s ease-in-out infinite alternate}
+@keyframes cloudFloat1{0%{transform:translateX(0)}100%{transform:translateX(40px)}}
+@keyframes cloudFloat2{0%{transform:translateX(0)}100%{transform:translateX(-30px)}}
+@keyframes cloudFloat3{0%{transform:translateX(0)}100%{transform:translateX(25px)}}
 
 /* Header content */
-.header-content{position:relative;z-index:3;padding:70px 40px 40px}
+.header-content{position:relative;z-index:5;padding:70px 40px 40px}
 .header-logo{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:8px}
-.header-logo img{width:72px;height:72px;filter:drop-shadow(0 4px 20px rgba(250,173,20,0.3))}
+.header-logo img{width:80px;height:80px;filter:drop-shadow(0 4px 24px rgba(250,173,20,0.35));transition:transform 0.3s}
+.header-logo:hover img{transform:scale(1.05)}
 .header-content h1{
   font-family:'Space Grotesk','Inter',sans-serif;
-  font-size:3.2rem;font-weight:700;letter-spacing:6px;color:#ffffff;margin-bottom:8px;
-  text-shadow:0 2px 30px rgba(99,102,241,0.4),0 0 60px rgba(139,92,246,0.15);
+  font-size:3.4rem;font-weight:700;letter-spacing:8px;color:#ffffff;margin-bottom:8px;
+  text-shadow:0 2px 40px rgba(139,92,246,0.5),0 0 80px rgba(167,139,250,0.2);
 }
-.header-content .tagline{color:#a5b4fc;font-size:1.1rem;font-weight:400;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
+.header-content .tagline{color:rgba(200,180,253,0.9);font-size:1.1rem;font-weight:400;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
 .header-content .divider-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);margin:0 auto 22px;border-radius:2px}
-.header-content .subtitle{color:rgba(203,213,225,0.9);font-size:0.92rem;margin-top:10px;max-width:860px;margin-left:auto;margin-right:auto;line-height:1.8;text-shadow:0 1px 3px rgba(0,0,0,0.3);font-weight:300}
+.header-content .subtitle{color:rgba(220,215,240,0.85);font-size:0.92rem;margin-top:10px;max-width:860px;margin-left:auto;margin-right:auto;line-height:1.8;text-shadow:0 1px 4px rgba(0,0,0,0.4);font-weight:300}
 
 /* ===== STATS BAR (inside hero scene) ===== */
 .stats-bar{
   display:flex;justify-content:center;gap:16px;flex-wrap:wrap;max-width:960px;
   padding:28px 24px;margin:30px auto 40px;
-  position:relative;z-index:3;
-  background:rgba(15,23,42,0.6);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  position:relative;z-index:5;
+  background:rgba(15,12,30,0.55);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-radius:16px;
-  border:1px solid rgba(99,102,241,0.15);
-  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+  border:1px solid rgba(167,139,250,0.15);
+  box-shadow:0 8px 40px rgba(0,0,0,0.35),0 0 60px rgba(139,92,246,0.05);
 }
 .stat-item{
   text-align:center;padding:16px 24px;border-radius:12px;flex:1;min-width:130px;
-  background:linear-gradient(135deg,rgba(30,41,59,0.5),rgba(26,37,64,0.5));
-  border:1px solid rgba(99,102,241,0.1);
-  transition:transform 0.2s,border-color 0.2s;
+  background:linear-gradient(135deg,rgba(40,30,70,0.5),rgba(30,22,55,0.5));
+  border:1px solid rgba(167,139,250,0.1);
+  transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;
 }
-.stat-item:hover{transform:translateY(-2px);border-color:rgba(99,102,241,0.3)}
+.stat-item:hover{transform:translateY(-2px);border-color:rgba(167,139,250,0.3);box-shadow:0 4px 16px rgba(139,92,246,0.15)}
 .stat-item .number{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#c4b5fd,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-item .label{color:#94a3b8;font-size:0.75rem;margin-top:6px;text-transform:uppercase;letter-spacing:1px;font-weight:500}
 
@@ -215,16 +249,65 @@ body::before{
 .footer .footer-divider{width:40px;height:2px;background:linear-gradient(90deg,transparent,#334155,transparent);margin:16px auto}
 
 /* ===== RESPONSIVE ===== */
+/* ===== TABLET ===== */
+@media(max-width:1024px){
+  .page-wrapper{padding:20px 16px 30px}
+  .header-content{padding:60px 30px 30px}
+  .header-content h1{font-size:2.8rem;letter-spacing:5px}
+  .stats-bar{gap:12px;padding:22px 18px;max-width:800px}
+  .stat-item{padding:14px 18px;min-width:120px}
+  .stat-item .number{font-size:1.7rem}
+}
+
+/* ===== MOBILE ===== */
 @media(max-width:768px){
   .grid-2{grid-template-columns:1fr}
-  .member-header{flex-direction:column}
-  .header-content h1{font-size:2.2rem;letter-spacing:3px}
-  .header-content .tagline{font-size:0.95rem}
-  .header-logo img{width:52px;height:52px}
-  .stats-bar{gap:10px}
-  .stat-item{min-width:100px;padding:12px 16px}
-  .card-body{padding:18px 20px 22px}
-  .member-header{padding:18px 20px 14px}
+  .member-header{flex-direction:column;text-align:center}
+  .header-content{padding:50px 20px 25px}
+  .header-content h1{font-size:2rem;letter-spacing:3px}
+  .header-content .tagline{font-size:0.85rem;letter-spacing:2px}
+  .header-content .subtitle{font-size:0.82rem;line-height:1.6;padding:0 8px}
+  .header-logo img{width:56px;height:56px}
+  .stats-bar{
+    gap:8px;padding:16px 12px;margin:20px 12px 30px;
+    flex-direction:row;flex-wrap:wrap;
+  }
+  .stat-item{min-width:calc(50% - 8px);padding:12px 8px}
+  .stat-item .number{font-size:1.5rem}
+  .stat-item .label{font-size:0.65rem;letter-spacing:0.5px}
+  .card-body{padding:16px 16px 20px}
+  .member-header{padding:16px 16px 12px}
+  .member-name{font-size:1.2rem}
+  .member-role{font-size:0.82rem}
+  .member-exp{padding:6px 14px;font-size:0.78rem}
+  .section-title{font-size:0.75rem}
+  .section-content{font-size:0.82rem}
+  .tag{font-size:0.72rem;padding:3px 10px}
+  .job-block{padding:12px 14px}
+  .job-title{font-size:0.85rem}
+  .links-section a{padding:6px 12px;font-size:0.78rem}
+  .footer{padding:30px 16px}
+  .footer .footer-brand{font-size:1.1rem}
+  .page-wrapper{padding:15px 10px 30px}
+  .hero-scene .cloud{display:none}
+}
+
+/* ===== SMALL MOBILE ===== */
+@media(max-width:480px){
+  .header-content{padding:40px 14px 20px}
+  .header-content h1{font-size:1.6rem;letter-spacing:2px}
+  .header-content .tagline{font-size:0.75rem;letter-spacing:1.5px}
+  .header-content .subtitle{font-size:0.76rem;padding:0 4px}
+  .header-logo img{width:48px;height:48px}
+  .stats-bar{gap:6px;padding:12px 8px;margin:16px 8px 24px;border-radius:12px}
+  .stat-item{padding:10px 6px;border-radius:8px}
+  .stat-item .number{font-size:1.3rem}
+  .stat-item .label{font-size:0.6rem}
+  .member-card{border-radius:12px;margin-bottom:16px}
+  .card-body{padding:14px 12px 16px}
+  .member-header{padding:14px 12px 10px}
+  .member-name{font-size:1.1rem}
+  .page-wrapper{padding:12px 6px 24px}
 }
 
 /* ===== PRINT — PRESERVE DARK THEME ===== */
@@ -244,16 +327,15 @@ body::before{
   body::before{display:none}
   .page-wrapper{padding:10px 14px}
 
-  /* Header — keep dark mountain theme */
+  /* Header — keep dark theme for print */
   .hero-scene{
-    background:linear-gradient(180deg,#060d1a 0%,#0c1929 15%,#122240 30%,#1a3055 50%,#243b65 65%,#2d4a78 75%,#1e3a5f 88%,#0f2847 100%) !important;
+    background:linear-gradient(180deg,#0d0b1a 0%,#1c1540 25%,#3a2878 50%,#6e50b8 75%,#0f2847 100%) !important;
     -webkit-print-color-adjust:exact !important;
   }
-  .hero-scene .fog{display:none}
+  .hero-scene .fog,.hero-scene .cloud,.hero-scene .stars{display:none}
   .header-content h1{color:#ffffff !important;text-shadow:none !important}
-  .header-content .tagline{color:#a5b4fc !important}
-  .header-content .subtitle{color:#cbd5e1 !important;text-shadow:none !important}
-  .hero-scene .stars::before{display:none}
+  .header-content .tagline{color:#c4b5fd !important}
+  .header-content .subtitle{color:#ddd7f0 !important;text-shadow:none !important}
 
   /* Stats bar */
   .stats-bar{
@@ -318,28 +400,36 @@ body::before{
 <body>
 <div class="hero-scene">
 <div class="stars"></div>
+<!-- Cloud accents -->
+<div class="cloud cloud-1"></div>
+<div class="cloud cloud-2"></div>
+<div class="cloud cloud-3"></div>
+<!-- Mountain SVG layers — violet/purple palette inspired by foggy mountain panorama -->
 <div class="mountain-layer">
-<svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Snow-capped far mountains (very distant, lighter, 3D depth) -->
-<path d="M0,320 L0,200 Q40,140 80,170 Q130,100 180,150 Q240,60 300,130 Q350,80 400,120 Q460,50 520,100 Q570,70 620,90 Q700,20 780,80 Q830,50 880,70 Q960,10 1040,60 Q1100,30 1160,55 Q1220,20 1280,50 Q1340,35 1400,65 L1440,55 L1440,320 Z" fill="rgba(45,75,110,0.25)"/>
-<!-- Snow highlights on far peaks -->
-<path d="M240,60 Q260,55 280,80 L300,130 Q290,90 270,70 Z" fill="rgba(200,220,240,0.12)"/>
-<path d="M700,20 Q720,15 740,40 L780,80 Q760,50 740,35 Z" fill="rgba(200,220,240,0.1)"/>
-<path d="M960,10 Q980,6 1000,25 L1040,60 Q1020,35 1000,20 Z" fill="rgba(200,220,240,0.12)"/>
-<!-- Mid-far mountains -->
-<path d="M0,320 L0,230 Q70,160 140,200 Q200,130 260,180 Q340,100 420,160 Q480,120 540,150 Q620,80 700,140 Q760,110 820,130 Q900,70 980,120 Q1040,90 1100,125 Q1180,75 1260,115 Q1340,95 1440,130 L1440,320 Z" fill="rgba(30,55,85,0.4)"/>
-<!-- Mid mountains with ridges -->
-<path d="M0,320 L0,250 Q80,190 160,225 Q240,160 320,210 Q400,150 480,195 Q560,140 640,185 Q720,155 800,175 Q880,120 960,165 Q1040,140 1120,175 Q1200,145 1280,180 Q1360,160 1440,190 L1440,320 Z" fill="rgba(20,42,68,0.55)"/>
-<!-- Near mountains (dark, prominent) -->
-<path d="M0,320 L0,265 Q100,220 200,250 Q300,200 400,240 Q500,210 600,235 Q700,200 800,230 Q900,210 1000,225 Q1100,205 1200,235 Q1300,220 1440,245 L1440,320 Z" fill="rgba(12,25,41,0.75)"/>
-<!-- Treeline silhouette -->
-<path d="M0,320 L0,285 Q30,278 60,282 Q90,275 120,280 Q150,272 180,278 Q210,274 240,280 Q270,270 300,277 Q330,272 360,278 Q390,268 420,275 Q450,270 480,276 Q510,268 540,274 Q570,270 600,276 Q630,266 660,273 Q690,268 720,274 Q750,264 780,272 Q810,268 840,274 Q870,262 900,270 Q930,266 960,272 Q990,260 1020,268 Q1050,264 1080,270 Q1110,258 1140,266 Q1170,262 1200,268 Q1230,256 1260,264 Q1290,260 1320,266 Q1350,258 1380,264 Q1410,260 1440,266 L1440,320 Z" fill="#080e1a"/>
+<svg viewBox="0 0 1440 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Layer 1: Very far mountains (lightest, most faded) -->
+<path d="M0,420 L0,220 Q30,180 60,200 Q110,130 160,180 Q220,90 280,155 Q330,100 380,140 Q440,60 500,120 Q550,80 600,105 Q680,30 760,90 Q820,55 880,80 Q950,15 1030,70 Q1090,35 1150,60 Q1210,25 1270,55 Q1340,40 1400,70 L1440,60 L1440,420 Z" fill="rgba(200,170,230,0.18)"/>
+<!-- Layer 2: Far mountains -->
+<path d="M0,420 L0,260 Q50,200 100,235 Q160,150 220,210 Q290,120 360,185 Q420,140 480,170 Q560,90 640,150 Q710,110 780,140 Q860,65 940,125 Q1010,85 1080,120 Q1160,70 1240,110 Q1310,90 1380,120 L1440,105 L1440,420 Z" fill="rgba(160,130,200,0.22)"/>
+<!-- Layer 3: Mid-far mountains -->
+<path d="M0,420 L0,290 Q70,230 140,268 Q210,180 280,245 Q350,200 420,235 Q500,160 580,215 Q650,180 720,205 Q800,130 880,190 Q950,155 1020,185 Q1100,140 1180,175 Q1260,155 1340,180 L1440,165 L1440,420 Z" fill="rgba(120,90,170,0.3)"/>
+<!-- Layer 4: Mid mountains -->
+<path d="M0,420 L0,310 Q80,270 160,295 Q240,230 320,275 Q400,245 480,268 Q560,210 640,255 Q720,230 800,250 Q880,195 960,240 Q1040,215 1120,245 Q1200,210 1280,240 Q1360,225 1440,245 L1440,420 Z" fill="rgba(85,60,140,0.4)"/>
+<!-- Layer 5: Near-mid mountains -->
+<path d="M0,420 L0,330 Q100,290 200,318 Q300,260 400,305 Q500,280 600,300 Q700,255 800,290 Q900,270 1000,285 Q1100,260 1200,285 Q1300,275 1440,290 L1440,420 Z" fill="rgba(55,35,100,0.55)"/>
+<!-- Layer 6: Near mountains (dark, prominent) -->
+<path d="M0,420 L0,355 Q100,325 200,348 Q300,310 400,340 Q500,320 600,335 Q700,305 800,330 Q900,318 1000,328 Q1100,312 1200,330 Q1300,322 1440,335 L1440,420 Z" fill="rgba(30,20,60,0.7)"/>
+<!-- Layer 7: Closest foreground (darkest) -->
+<path d="M0,420 L0,375 Q60,365 120,372 Q180,358 240,368 Q300,355 360,365 Q420,352 480,362 Q540,350 600,360 Q660,348 720,358 Q780,345 840,355 Q900,348 960,355 Q1020,342 1080,352 Q1140,345 1200,352 Q1260,340 1320,348 Q1380,342 1440,348 L1440,420 Z" fill="rgba(13,11,26,0.9)"/>
+<!-- Ground base -->
+<path d="M0,420 L0,395 Q120,388 240,393 Q360,385 480,390 Q600,383 720,388 Q840,382 960,387 Q1080,380 1200,386 Q1320,382 1440,388 L1440,420 Z" fill="#080e1a"/>
 </svg>
 </div>
 <!-- Fog layers for 3D depth -->
 <div class="fog fog-1"></div>
 <div class="fog fog-2"></div>
 <div class="fog fog-3"></div>
+<div class="fog fog-4"></div>
 <!-- Header content -->
 <div class="header-content">
 <div class="header-logo">
