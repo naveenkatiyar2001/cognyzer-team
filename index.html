@@ -28,28 +28,27 @@ body::before{
 }
 .page-wrapper{max-width:1200px;margin:0 auto;padding:30px 24px 40px}
 
-/* ===== HERO SCENE — SHARP MOUNTAIN PANORAMA ===== */
+/* ===== HERO SCENE — MOUNTAIN PANORAMA ===== */
 .hero-scene{
   text-align:center;position:relative;overflow:hidden;
   background:linear-gradient(180deg,
-    #1a1040 0%,#1e1348 4%,#221650 8%,#281a5a 13%,
-    #2f1e66 18%,#362372 24%,#3e2880 30%,
-    #4a3594 38%,#5640a5 46%,#644db5 54%,
-    #7560c4 62%,#8878d0 70%,#9c90da 78%,
-    #b0a8e2 86%,#c4bfea 92%,#d8d5f0 100%);
+    #0f0a22 0%,#130d2a 8%,#181135 16%,#1e1545 24%,
+    #261b58 32%,#30226e 42%,#3d2c88 54%,
+    #5040a0 66%,#6858b8 76%,#8878cc 86%,
+    #a89cda 94%,#c8bfe8 100%);
   padding-bottom:0;
 }
 
-/* Ambient horizon glow */
+/* Horizon glow */
 .hero-scene::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
   background:
-    radial-gradient(ellipse 120% 40% at 50% 90%, rgba(200,190,240,0.25) 0%, transparent 70%),
-    radial-gradient(ellipse 80% 30% at 30% 75%, rgba(150,120,220,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 30% at 70% 75%, rgba(150,120,220,0.1) 0%, transparent 60%);
+    radial-gradient(ellipse 100% 50% at 50% 95%, rgba(220,210,245,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 25% 80%, rgba(160,130,220,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 30% at 75% 80%, rgba(160,130,220,0.12) 0%, transparent 50%);
   z-index:0}
 
 /* Stars */
-.hero-scene .stars{position:absolute;top:0;left:0;right:0;height:45%;z-index:1;overflow:hidden}
+.hero-scene .stars{position:absolute;top:0;left:0;right:0;height:50%;z-index:1;overflow:hidden}
 .hero-scene .stars::before{content:'';position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;
   box-shadow:
     80px 15px 0 0 rgba(255,255,255,0.7),180px 8px 0 0 rgba(255,255,255,0.5),
@@ -71,29 +70,29 @@ body::before{
   animation:twinkle 6s ease-in-out infinite alternate-reverse}
 @keyframes twinkle{0%{opacity:0.6}100%{opacity:1}}
 
-/* SVG Mountain + Cloud layers */
+/* SVG layers */
 .hero-scene .mountain-layer{position:absolute;bottom:0;left:0;right:0;z-index:2}
 .hero-scene .mountain-layer svg{display:block;width:100%}
 .hero-scene .cloud-layer{position:absolute;bottom:0;left:0;right:0;z-index:3}
 .hero-scene .cloud-layer svg{display:block;width:100%}
 
-/* Fog layers — atmospheric haze */
-.hero-scene .fog{position:absolute;left:-5%;right:-5%;z-index:4;pointer-events:none}
-.hero-scene .fog-1{bottom:260px;height:140px;
-  background:linear-gradient(180deg,transparent,rgba(190,175,230,0.06) 25%,rgba(180,160,225,0.12) 50%,rgba(190,175,230,0.06) 75%,transparent);
-  animation:fogDrift1 20s ease-in-out infinite alternate}
-.hero-scene .fog-2{bottom:160px;height:120px;
-  background:linear-gradient(180deg,transparent,rgba(140,115,200,0.08) 30%,rgba(120,95,185,0.14) 55%,rgba(140,115,200,0.08) 75%,transparent);
-  animation:fogDrift2 26s ease-in-out infinite alternate}
-.hero-scene .fog-3{bottom:70px;height:120px;
-  background:linear-gradient(180deg,transparent,rgba(80,55,145,0.1) 25%,rgba(60,40,120,0.18) 55%,rgba(50,30,100,0.22) 80%,transparent);
-  animation:fogDrift3 30s ease-in-out infinite alternate}
-.hero-scene .fog-4{bottom:0;height:60px;
-  background:linear-gradient(180deg,transparent 0%,rgba(8,14,26,0.5) 50%,rgba(8,14,26,0.95) 100%);
+/* Fog — atmospheric haze between mountain ranges */
+.hero-scene .fog{position:absolute;left:-10%;right:-10%;z-index:4;pointer-events:none}
+.hero-scene .fog-1{bottom:280px;height:180px;
+  background:linear-gradient(180deg,transparent 0%,rgba(180,165,230,0.04) 20%,rgba(170,150,225,0.1) 50%,rgba(180,165,230,0.04) 80%,transparent 100%);
+  animation:fogDrift1 24s ease-in-out infinite alternate}
+.hero-scene .fog-2{bottom:180px;height:160px;
+  background:linear-gradient(180deg,transparent 0%,rgba(130,105,200,0.06) 25%,rgba(115,88,190,0.14) 55%,rgba(130,105,200,0.06) 80%,transparent 100%);
+  animation:fogDrift2 30s ease-in-out infinite alternate}
+.hero-scene .fog-3{bottom:80px;height:160px;
+  background:linear-gradient(180deg,transparent 0%,rgba(70,45,140,0.08) 20%,rgba(50,30,115,0.18) 50%,rgba(40,22,95,0.24) 80%,transparent 100%);
+  animation:fogDrift3 36s ease-in-out infinite alternate}
+.hero-scene .fog-4{bottom:0;height:70px;
+  background:linear-gradient(180deg,transparent 0%,rgba(8,14,26,0.5) 40%,rgba(8,14,26,0.95) 100%);
   z-index:5}
-@keyframes fogDrift1{0%{transform:translateX(-3%);opacity:0.5}100%{transform:translateX(3%);opacity:0.9}}
-@keyframes fogDrift2{0%{transform:translateX(2%);opacity:0.4}100%{transform:translateX(-2%);opacity:0.85}}
-@keyframes fogDrift3{0%{transform:translateX(-2%);opacity:0.6}100%{transform:translateX(2%);opacity:1}}
+@keyframes fogDrift1{0%{transform:translateX(-3%) scaleY(0.9);opacity:0.4}100%{transform:translateX(3%) scaleY(1.1);opacity:0.85}}
+@keyframes fogDrift2{0%{transform:translateX(2.5%) scaleY(1.05);opacity:0.35}100%{transform:translateX(-2.5%) scaleY(0.95);opacity:0.8}}
+@keyframes fogDrift3{0%{transform:translateX(-2%);opacity:0.5}100%{transform:translateX(2%);opacity:0.95}}
 
 /* Header content */
 .header-content{position:relative;z-index:6;padding:70px 40px 40px}
@@ -391,44 +390,69 @@ body::before{
 <body>
 <div class="hero-scene">
 <div class="stars"></div>
-<!-- Mountain SVG layers — sharp jagged peaks, violet palette -->
+<!-- Mountain SVG layers — organic peaks with dramatic height variation -->
 <div class="mountain-layer">
-<svg viewBox="0 0 1440 480" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Layer 1: Very far mountains (lightest, most faded, ghostly) -->
-<path d="M0,480 L0,260 L25,250 L50,200 L65,220 L90,160 L110,190 L135,130 L155,175 L180,145 L210,100 L230,150 L260,120 L285,80 L310,140 L340,110 L370,65 L395,120 L420,90 L450,135 L475,105 L510,60 L535,110 L560,85 L590,130 L620,75 L650,115 L680,55 L710,100 L740,70 L770,120 L800,50 L825,95 L860,70 L890,110 L920,45 L950,90 L980,65 L1010,105 L1040,55 L1070,95 L1100,40 L1130,85 L1160,60 L1190,100 L1220,50 L1250,90 L1280,65 L1310,95 L1340,55 L1370,80 L1400,60 L1440,75 L1440,480 Z" fill="rgba(190,175,220,0.15)"/>
-<!-- Layer 2: Far mountains -->
-<path d="M0,480 L0,300 L30,280 L55,240 L80,265 L110,200 L140,245 L165,190 L195,230 L225,165 L250,215 L280,175 L315,130 L345,200 L375,160 L405,110 L435,180 L460,140 L495,190 L525,125 L555,175 L585,135 L620,95 L655,165 L685,120 L715,170 L745,105 L780,155 L810,115 L840,160 L870,90 L905,145 L935,110 L965,155 L1000,85 L1030,140 L1060,100 L1095,150 L1125,95 L1155,135 L1190,80 L1220,130 L1250,100 L1285,140 L1315,90 L1345,120 L1380,95 L1410,125 L1440,100 L1440,480 Z" fill="rgba(160,140,205,0.2)"/>
-<!-- Layer 3: Mid-far mountains -->
-<path d="M0,480 L0,330 L40,305 L70,270 L95,295 L130,235 L160,275 L190,220 L220,260 L260,195 L290,250 L320,210 L355,170 L390,235 L420,195 L455,150 L490,220 L520,180 L555,225 L590,165 L625,210 L660,175 L695,135 L730,200 L760,160 L800,205 L835,150 L870,195 L905,155 L940,200 L975,140 L1010,185 L1045,150 L1080,195 L1115,135 L1150,180 L1185,145 L1220,185 L1260,130 L1295,175 L1330,145 L1365,180 L1400,140 L1440,165 L1440,480 Z" fill="rgba(130,108,185,0.28)"/>
-<!-- Layer 4: Mid mountains -->
-<path d="M0,480 L0,350 L35,330 L65,295 L100,320 L135,270 L170,305 L200,255 L240,290 L275,240 L310,280 L345,245 L380,210 L415,265 L450,230 L490,195 L525,255 L560,220 L600,260 L640,210 L675,250 L710,215 L745,185 L785,240 L820,205 L860,245 L900,195 L940,235 L975,200 L1015,240 L1050,195 L1090,230 L1125,200 L1160,235 L1200,190 L1240,225 L1275,200 L1315,230 L1350,195 L1390,220 L1440,210 L1440,480 Z" fill="rgba(100,78,160,0.38)"/>
-<!-- Layer 5: Near-mid mountains -->
-<path d="M0,480 L0,370 L45,350 L80,320 L120,345 L155,300 L195,330 L230,290 L270,320 L310,280 L350,310 L390,275 L430,250 L470,300 L510,270 L555,240 L595,290 L635,260 L680,295 L720,255 L760,285 L800,250 L845,230 L885,275 L925,248 L970,280 L1010,245 L1050,275 L1095,240 L1135,270 L1180,238 L1220,265 L1265,240 L1310,260 L1355,235 L1400,258 L1440,248 L1440,480 Z" fill="rgba(70,50,130,0.5)"/>
-<!-- Layer 6: Near mountains (dark, prominent, sharp) -->
-<path d="M0,480 L0,385 L40,370 L75,345 L115,368 L150,330 L190,355 L230,318 L270,345 L315,310 L355,338 L400,305 L440,330 L480,300 L520,325 L560,295 L605,320 L650,290 L695,315 L740,285 L785,310 L825,282 L870,308 L915,278 L960,305 L1005,280 L1050,302 L1095,275 L1140,298 L1185,272 L1230,295 L1275,270 L1320,292 L1365,268 L1410,288 L1440,278 L1440,480 Z" fill="rgba(40,25,80,0.65)"/>
-<!-- Layer 7: Foreground silhouette -->
-<path d="M0,480 L0,400 L50,390 L90,375 L130,392 L170,365 L210,385 L255,360 L300,380 L345,358 L390,375 L435,355 L480,372 L525,350 L570,368 L620,345 L665,365 L710,342 L760,360 L810,340 L860,358 L905,338 L955,355 L1000,335 L1050,352 L1100,332 L1150,348 L1200,330 L1250,346 L1300,328 L1350,344 L1400,326 L1440,340 L1440,480 Z" fill="rgba(18,12,40,0.82)"/>
-<!-- Layer 8: Closest ground -->
-<path d="M0,480 L0,420 L60,412 L120,405 L180,415 L240,402 L300,412 L360,400 L420,410 L480,398 L540,408 L600,396 L660,406 L720,394 L780,404 L840,393 L900,403 L960,392 L1020,400 L1080,390 L1140,398 L1200,388 L1260,396 L1320,386 L1380,394 L1440,388 L1440,480 Z" fill="#080e1a"/>
+<svg viewBox="0 0 1440 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Layer 1: Farthest range — ghostly, huge scattered peaks -->
+<path d="M-10,520 L-10,340 L40,330 L80,310 L110,280 L130,250 L145,200 L155,170 L160,145 L165,170 L175,210 L200,250 L240,290 L280,310 L310,290 L340,255 L360,220 L375,180 L385,140 L390,110 L395,140 L405,185 L425,230 L455,270 L500,300 L540,310 L560,290 L580,260 L600,310 L640,330 L680,320 L700,290 L720,250 L735,210 L745,170 L750,130 L755,95 L760,130 L768,170 L780,215 L800,260 L835,295 L870,315 L910,325 L950,310 L980,280 L1000,250 L1015,220 L1025,185 L1030,155 L1035,185 L1045,225 L1065,265 L1100,300 L1140,320 L1190,330 L1220,315 L1240,285 L1260,250 L1275,215 L1285,180 L1290,150 L1295,180 L1305,220 L1325,265 L1360,300 L1400,325 L1450,340 L1450,520 Z"
+  fill="rgba(195,180,228,0.12)"/>
+
+<!-- Layer 2: Far range — slightly bolder peaks, offset from layer 1 -->
+<path d="M-10,520 L-10,370 L30,360 L60,340 L80,315 L95,285 L105,255 L110,225 L115,195 L118,170 L122,195 L130,235 L150,275 L185,310 L230,340 L270,355 L310,345 L340,320 L365,285 L380,250 L390,215 L395,180 L398,155 L401,180 L408,220 L425,260 L455,295 L490,320 L530,340 L580,350 L620,340 L650,315 L670,280 L685,245 L695,210 L700,178 L705,210 L715,250 L740,290 L780,325 L830,345 L880,355 L920,345 L950,320 L975,285 L990,250 L1000,215 L1005,185 L1010,160 L1015,185 L1025,225 L1050,265 L1090,300 L1130,325 L1170,340 L1210,345 L1250,330 L1275,300 L1295,265 L1310,230 L1318,200 L1325,230 L1340,270 L1370,305 L1410,335 L1450,350 L1450,520 Z"
+  fill="rgba(170,150,215,0.18)"/>
+
+<!-- Layer 3: Mid-far — more defined peaks, some tall, some small ridges -->
+<path d="M-10,520 L-10,380 L20,375 L50,360 L75,335 L95,300 L110,265 L120,235 L128,205 L132,180 L136,160 L140,180 L148,215 L165,255 L195,295 L235,330 L280,350 L320,360 L360,350 L390,325 L410,290 L425,260 L432,240 L438,260 L455,290 L480,315 L510,335 L550,345 L590,340 L620,315 L640,280 L658,240 L668,200 L672,168 L676,200 L685,240 L705,280 L740,315 L780,340 L825,355 L870,360 L910,348 L938,320 L955,285 L968,250 L975,225 L980,205 L985,225 L995,260 L1015,295 L1050,325 L1095,345 L1140,358 L1180,360 L1210,345 L1235,315 L1255,275 L1268,240 L1275,210 L1280,185 L1285,210 L1295,248 L1315,285 L1345,315 L1385,340 L1430,358 L1450,360 L1450,520 Z"
+  fill="rgba(140,118,198,0.26)"/>
+
+<!-- Layer 4: Mid range — prominent peaks with sub-ridges -->
+<path d="M-10,520 L-10,400 L20,395 L50,380 L80,355 L105,320 L120,285 L130,255 L138,230 L145,210 L150,195 L155,210 L162,240 L178,275 L200,310 L230,340 L270,360 L300,370 L340,365 L370,345 L395,310 L415,275 L428,248 L435,230 L440,250 L452,278 L475,305 L505,330 L540,350 L575,360 L610,355 L640,335 L660,305 L675,275 L685,250 L690,230 L695,250 L708,280 L730,310 L760,335 L800,355 L845,365 L880,360 L905,342 L925,315 L940,285 L950,258 L958,238 L965,258 L978,290 L1000,320 L1035,345 L1075,360 L1110,365 L1145,358 L1172,332 L1192,298 L1205,265 L1215,240 L1220,222 L1225,240 L1235,270 L1258,305 L1290,335 L1330,355 L1370,368 L1410,375 L1450,380 L1450,520 Z"
+  fill="rgba(108,82,170,0.36)"/>
+
+<!-- Layer 5: Near-mid — darker, bold silhouettes -->
+<path d="M-10,520 L-10,410 L25,405 L55,392 L85,370 L110,342 L130,312 L145,285 L155,262 L162,245 L168,232 L175,245 L185,270 L205,300 L235,330 L270,355 L310,372 L350,380 L390,375 L420,358 L445,330 L462,302 L472,280 L478,265 L482,280 L492,305 L515,332 L545,355 L580,370 L620,378 L655,375 L685,358 L705,330 L718,305 L726,282 L730,268 L735,282 L745,308 L768,335 L800,358 L840,372 L880,378 L920,374 L950,355 L972,328 L985,302 L994,280 L1000,265 L1005,280 L1018,308 L1042,335 L1078,358 L1118,374 L1155,378 L1190,372 L1218,350 L1238,322 L1252,295 L1262,272 L1268,258 L1275,272 L1288,300 L1315,330 L1350,355 L1395,375 L1440,385 L1450,388 L1450,520 Z"
+  fill="rgba(75,52,138,0.48)"/>
+
+<!-- Layer 6: Near range — dark prominent mountains -->
+<path d="M-10,520 L-10,425 L30,418 L65,405 L100,385 L128,360 L150,335 L168,310 L180,290 L188,275 L195,265 L202,275 L215,298 L238,325 L268,348 L305,368 L345,380 L385,385 L420,378 L448,358 L468,335 L482,312 L490,295 L495,285 L500,295 L512,318 L535,342 L565,362 L600,378 L640,385 L680,382 L710,368 L732,345 L748,322 L758,302 L765,290 L770,302 L782,325 L805,348 L835,368 L872,380 L910,385 L945,380 L972,362 L990,340 L1002,318 L1010,300 L1015,290 L1020,300 L1032,322 L1055,345 L1085,365 L1120,378 L1158,385 L1195,382 L1225,365 L1248,342 L1262,320 L1272,300 L1278,290 L1285,302 L1300,325 L1328,350 L1362,370 L1402,382 L1440,388 L1450,390 L1450,520 Z"
+  fill="rgba(45,28,95,0.62)"/>
+
+<!-- Layer 7: Foreground ridge — very dark -->
+<path d="M-10,520 L-10,440 L35,435 L75,425 L115,410 L148,392 L175,370 L198,350 L215,335 L228,325 L238,318 L248,325 L265,342 L290,362 L320,380 L358,395 L400,405 L440,410 L480,405 L510,392 L535,372 L552,355 L565,342 L572,335 L578,342 L592,358 L615,378 L648,395 L685,405 L725,410 L762,405 L790,392 L810,375 L825,358 L835,345 L842,338 L850,348 L865,365 L888,382 L918,395 L955,405 L995,410 L1030,405 L1058,392 L1078,375 L1092,358 L1102,345 L1108,338 L1115,348 L1130,365 L1155,382 L1188,395 L1225,405 L1265,410 L1300,405 L1328,392 L1350,375 L1368,358 L1380,345 L1388,340 L1395,348 L1412,365 L1440,385 L1450,390 L1450,520 Z"
+  fill="rgba(20,12,50,0.8)"/>
+
+<!-- Layer 8: Ground — blends into body -->
+<path d="M-10,520 L-10,460 L60,452 L140,445 L220,450 L300,442 L380,448 L460,440 L540,445 L620,438 L700,442 L780,435 L860,440 L940,432 L1020,438 L1100,430 L1180,435 L1260,428 L1340,434 L1420,430 L1450,432 L1450,520 Z"
+  fill="#080e1a"/>
 </svg>
 </div>
-<!-- Cloud SVG layer — soft glowing clouds between mountains -->
+
+<!-- Cloud SVG layer — soft luminous clouds between ranges -->
 <div class="cloud-layer">
-<svg viewBox="0 0 1440 480" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1440 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<radialGradient id="cg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(180,200,255,0.12)"/><stop offset="100%" stop-color="rgba(180,200,255,0)"/></radialGradient>
-<radialGradient id="cg2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(160,180,240,0.1)"/><stop offset="100%" stop-color="rgba(160,180,240,0)"/></radialGradient>
+<radialGradient id="cg1" cx="50%" cy="40%" rx="50%" ry="50%"><stop offset="0%" stop-color="rgba(200,210,255,0.18)"/><stop offset="60%" stop-color="rgba(200,210,255,0.05)"/><stop offset="100%" stop-color="rgba(200,210,255,0)"/></radialGradient>
+<radialGradient id="cg2" cx="50%" cy="40%" rx="50%" ry="50%"><stop offset="0%" stop-color="rgba(180,195,245,0.14)"/><stop offset="60%" stop-color="rgba(180,195,245,0.04)"/><stop offset="100%" stop-color="rgba(180,195,245,0)"/></radialGradient>
+<radialGradient id="cg3" cx="50%" cy="50%" rx="50%" ry="50%"><stop offset="0%" stop-color="rgba(140,165,230,0.1)"/><stop offset="70%" stop-color="rgba(140,165,230,0.02)"/><stop offset="100%" stop-color="rgba(140,165,230,0)"/></radialGradient>
 </defs>
-<!-- Cloud cluster left -->
-<ellipse cx="180" cy="260" rx="160" ry="28" fill="url(#cg1)"><animate attributeName="cx" values="180;220;180" dur="25s" repeatCount="indefinite"/></ellipse>
-<ellipse cx="240" cy="255" rx="120" ry="22" fill="url(#cg1)"><animate attributeName="cx" values="240;270;240" dur="20s" repeatCount="indefinite"/></ellipse>
-<!-- Cloud cluster right -->
-<ellipse cx="1100" cy="240" rx="180" ry="30" fill="url(#cg2)"><animate attributeName="cx" values="1100;1060;1100" dur="30s" repeatCount="indefinite"/></ellipse>
-<ellipse cx="1180" cy="245" rx="130" ry="24" fill="url(#cg2)"><animate attributeName="cx" values="1180;1150;1180" dur="22s" repeatCount="indefinite"/></ellipse>
-<!-- Cloud wisps mid -->
-<ellipse cx="650" cy="290" rx="200" ry="20" fill="url(#cg1)"><animate attributeName="cx" values="650;690;650" dur="28s" repeatCount="indefinite"/></ellipse>
-<ellipse cx="450" cy="320" rx="140" ry="18" fill="url(#cg2)"><animate attributeName="cx" values="450;480;450" dur="24s" repeatCount="indefinite"/></ellipse>
-<ellipse cx="900" cy="310" rx="160" ry="22" fill="url(#cg1)"><animate attributeName="cx" values="900;870;900" dur="26s" repeatCount="indefinite"/></ellipse>
+<!-- Distant clouds — between layers 2 and 3 -->
+<ellipse cx="250" cy="285" rx="220" ry="32" fill="url(#cg1)">
+  <animate attributeName="cx" values="250;295;250" dur="28s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="1050" cy="275" rx="250" ry="35" fill="url(#cg1)">
+  <animate attributeName="cx" values="1050;1000;1050" dur="32s" repeatCount="indefinite"/></ellipse>
+<!-- Mid clouds — between layers 4 and 5 -->
+<ellipse cx="520" cy="340" rx="200" ry="28" fill="url(#cg2)">
+  <animate attributeName="cx" values="520;560;520" dur="24s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="900" cy="350" rx="180" ry="25" fill="url(#cg2)">
+  <animate attributeName="cx" values="900;860;900" dur="26s" repeatCount="indefinite"/></ellipse>
+<!-- Near clouds — between layers 6 and 7, subtle -->
+<ellipse cx="350" cy="395" rx="160" ry="22" fill="url(#cg3)">
+  <animate attributeName="cx" values="350;380;350" dur="20s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="750" cy="388" rx="190" ry="24" fill="url(#cg3)">
+  <animate attributeName="cx" values="750;720;750" dur="22s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="1150" cy="392" rx="170" ry="20" fill="url(#cg3)">
+  <animate attributeName="cx" values="1150;1180;1150" dur="25s" repeatCount="indefinite"/></ellipse>
 </svg>
 </div>
 <!-- Fog layers for atmospheric depth -->
