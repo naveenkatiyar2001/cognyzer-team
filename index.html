@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cognyzer - Team Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:#080e1a;
+  color:#e2e8f0;
+  padding:0;
+  min-height:100vh;
+  line-height:1.6;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59,130,246,0.03) 0%, transparent 50%);
+}
+.page-wrapper{max-width:1200px;margin:0 auto;padding:30px 24px 40px}
+
+/* ===== HEADER — MOUNTAIN PANORAMA ===== */
+.header{
+  text-align:center;margin-bottom:0;position:relative;overflow:hidden;
+  border-radius:0 0 24px 24px;padding:90px 40px 70px;
+  background:linear-gradient(180deg,#060d1a 0%,#0c1929 15%,#122240 30%,#1a3055 50%,#243b65 65%,#2d4a78 75%,#1e3a5f 88%,#0f2847 100%);
+}
+.header::before{content:'';position:absolute;bottom:0;left:0;right:0;height:100%;
+  background:
+    linear-gradient(175deg, transparent 40%, rgba(15,40,71,0.3) 42%, transparent 44%),
+    linear-gradient(160deg, transparent 30%, rgba(30,58,95,0.5) 33%, transparent 36%),
+    linear-gradient(170deg, transparent 50%, rgba(20,45,75,0.4) 53%, transparent 56%);
+  z-index:0}
+.header .mountain-layer{position:absolute;bottom:0;left:0;right:0;z-index:1}
+.header .mountain-layer svg{display:block;width:100%}
+.header .stars{position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;overflow:hidden}
+.header .stars::before{content:'';position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;
+  box-shadow:
+    80px 20px 0 0 rgba(255,255,255,0.6),200px 40px 0 0 rgba(255,255,255,0.4),
+    350px 15px 0 0 rgba(255,255,255,0.7),500px 35px 0 0 rgba(255,255,255,0.3),
+    650px 25px 0 0 rgba(255,255,255,0.5),120px 60px 0 0 rgba(255,255,255,0.4),
+    400px 50px 0 0 rgba(255,255,255,0.6),750px 30px 0 0 rgba(255,255,255,0.35),
+    900px 18px 0 0 rgba(255,255,255,0.5),300px 70px 0 0 rgba(255,255,255,0.3),
+    550px 45px 0 0 rgba(255,255,255,0.55),1000px 22px 0 0 rgba(255,255,255,0.45),
+    1100px 55px 0 0 rgba(255,255,255,0.35),1200px 12px 0 0 rgba(255,255,255,0.6),
+    850px 65px 0 0 rgba(255,255,255,0.25),170px 35px 0 0 rgba(255,255,255,0.5),
+    450px 18px 0 0 rgba(255,255,255,0.3),720px 55px 0 0 rgba(255,255,255,0.4),
+    1050px 40px 0 0 rgba(255,255,255,0.55),60px 48px 0 0 rgba(255,255,255,0.3);
+  animation:twinkle 4s ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:0.7}100%{opacity:1}}
+.header .content-wrapper{position:relative;z-index:2}
+.header h1{
+  font-family:'Space Grotesk','Inter',sans-serif;
+  font-size:3.2rem;font-weight:700;letter-spacing:6px;color:#ffffff;margin-bottom:8px;
+  text-shadow:0 2px 30px rgba(99,102,241,0.4),0 0 60px rgba(139,92,246,0.15);
+}
+.header .tagline{color:#a5b4fc;font-size:1.1rem;font-weight:400;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
+.header .divider-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);margin:0 auto 22px;border-radius:2px}
+.header .subtitle{color:rgba(203,213,225,0.9);font-size:0.92rem;margin-top:10px;max-width:860px;margin-left:auto;margin-right:auto;line-height:1.8;text-shadow:0 1px 3px rgba(0,0,0,0.3);font-weight:300}
+
+/* ===== STATS BAR ===== */
+.stats-bar{
+  display:flex;justify-content:center;gap:16px;margin:0 auto;flex-wrap:wrap;max-width:960px;
+  padding:28px 24px;
+  position:relative;top:-20px;
+  background:rgba(15,23,42,0.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-radius:16px;
+  border:1px solid rgba(99,102,241,0.15);
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+.stat-item{
+  text-align:center;padding:16px 24px;border-radius:12px;flex:1;min-width:130px;
+  background:linear-gradient(135deg,rgba(30,41,59,0.6),rgba(26,37,64,0.6));
+  border:1px solid rgba(99,102,241,0.1);
+  transition:transform 0.2s,border-color 0.2s;
+}
+.stat-item:hover{transform:translateY(-2px);border-color:rgba(99,102,241,0.3)}
+.stat-item .number{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#c4b5fd,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-item .label{color:#94a3b8;font-size:0.75rem;margin-top:6px;text-transform:uppercase;letter-spacing:1px;font-weight:500}
+
+/* ===== MEMBER CARDS ===== */
+.member-card{
+  background:linear-gradient(145deg,rgba(30,41,59,0.9),rgba(22,32,50,0.95));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-radius:16px;padding:0;margin-bottom:24px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.25),0 1px 0 rgba(99,102,241,0.1) inset;
+  border:1px solid rgba(99,102,241,0.1);
+  overflow:hidden;
+  transition:transform 0.25s,box-shadow 0.25s;
+}
+.member-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.35),0 1px 0 rgba(99,102,241,0.15) inset}
+.member-card:nth-child(even){border-color:rgba(139,92,246,0.12)}
+
+.member-header{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  padding:24px 28px 18px;
+  background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.05));
+  border-bottom:1px solid rgba(99,102,241,0.1);
+}
+.member-name{font-family:'Space Grotesk','Inter',sans-serif;font-size:1.45rem;font-weight:700;color:#e0e7ff;letter-spacing:0.5px}
+.member-role{color:#6ee7b7;font-size:0.92rem;font-weight:500;margin-top:3px}
+.member-exp{
+  background:linear-gradient(135deg,#312e81,#3730a3);color:#c4b5fd;
+  padding:8px 18px;border-radius:24px;font-size:0.82rem;font-weight:600;white-space:nowrap;
+  box-shadow:0 2px 8px rgba(99,102,241,0.2);letter-spacing:0.3px;
+}
+.card-body{padding:24px 28px 28px}
+
+/* ===== SECTIONS ===== */
+.section{margin-bottom:20px}
+.section-title{
+  font-family:'Space Grotesk','Inter',sans-serif;
+  font-size:0.8rem;font-weight:600;color:#fbbf24;text-transform:uppercase;letter-spacing:1.5px;
+  margin-bottom:10px;display:flex;align-items:center;gap:8px;
+  padding-bottom:6px;border-bottom:1px solid rgba(251,191,36,0.15);
+}
+.section-content{color:#cbd5e1;font-size:0.88rem;line-height:1.75}
+.section-content ul{list-style:none;padding-left:0}
+.section-content ul li{padding:4px 0;padding-left:20px;position:relative}
+.section-content ul li::before{content:"▹";position:absolute;left:0;color:#818cf8;font-weight:700}
+
+/* ===== SKILL TAGS ===== */
+.tag{
+  display:inline-block;padding:4px 12px;border-radius:6px;font-size:0.78rem;margin:3px;font-weight:500;
+  letter-spacing:0.3px;transition:transform 0.15s;
+}
+.tag:hover{transform:translateY(-1px)}
+.tag-purple{background:rgba(49,46,129,0.6);color:#c4b5fd;border:1px solid rgba(196,181,253,0.15)}
+.tag-green{background:rgba(6,78,59,0.5);color:#6ee7b7;border:1px solid rgba(110,231,183,0.15)}
+.tag-blue{background:rgba(30,58,95,0.5);color:#7dd3fc;border:1px solid rgba(125,211,252,0.15)}
+.tag-orange{background:rgba(120,53,15,0.5);color:#fbbf24;border:1px solid rgba(251,191,36,0.15)}
+.tag-red{background:rgba(127,29,29,0.5);color:#fca5a5;border:1px solid rgba(252,165,165,0.15)}
+.subsection{margin-top:10px}
+.subsection-title{font-weight:600;color:#94a3b8;font-size:0.85rem}
+
+/* ===== JOB BLOCKS ===== */
+.job-block{
+  background:linear-gradient(135deg,rgba(22,32,50,0.8),rgba(15,23,42,0.6));
+  border-radius:10px;padding:16px 20px;margin:10px 0;
+  border-left:3px solid #6366f1;
+  border:1px solid rgba(99,102,241,0.08);
+  border-left:3px solid #6366f1;
+  transition:border-color 0.2s;
+}
+.job-block:hover{border-left-color:#a78bfa}
+.job-title{font-weight:700;color:#93c5fd;font-size:0.92rem}
+.job-company{color:#94a3b8;font-size:0.83rem;margin-top:2px}
+.job-duration{color:#64748b;font-size:0.8rem;font-style:italic;margin-top:1px}
+
+/* ===== COMPETITIVE PROGRAMMING LINKS ===== */
+.links-section a{
+  color:#c4b5fd;text-decoration:none;margin-right:8px;font-size:0.84rem;font-weight:500;
+  background:linear-gradient(135deg,rgba(30,27,75,0.8),rgba(55,48,163,0.4));
+  padding:8px 16px;border-radius:10px;display:inline-block;margin-bottom:8px;
+  border:1px solid rgba(99,102,241,0.25);
+  transition:all 0.25s;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+.links-section a:hover{background:linear-gradient(135deg,#312e81,#4338ca);color:#e0e7ff;border-color:#6366f1;transform:translateY(-2px);box-shadow:0 4px 16px rgba(99,102,241,0.25)}
+
+/* ===== CERTIFICATIONS ===== */
+.cert-item{
+  background:linear-gradient(135deg,rgba(26,35,50,0.8),rgba(22,32,50,0.6));
+  padding:7px 14px;border-radius:8px;margin:4px;display:inline-block;font-size:0.8rem;color:#94a3b8;
+  border:1px solid rgba(148,163,184,0.1);
+  transition:border-color 0.2s,color 0.2s;
+}
+.cert-item:hover{border-color:rgba(148,163,184,0.25);color:#cbd5e1}
+
+/* ===== GRID ===== */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;margin-top:20px;padding:40px 24px;
+  color:#64748b;font-size:0.85rem;
+  background:linear-gradient(180deg,transparent,rgba(12,25,41,0.5));
+  border-radius:16px;
+  border:1px solid rgba(99,102,241,0.05);
+}
+.footer .footer-brand{
+  font-family:'Space Grotesk',sans-serif;font-size:1.3rem;color:#a78bfa;
+  margin-bottom:10px;font-weight:700;letter-spacing:3px;
+}
+.footer a{color:#818cf8;text-decoration:none;transition:color 0.2s}
+.footer a:hover{color:#a78bfa}
+.footer .footer-note{font-size:0.78rem;color:#475569;margin-top:8px}
+.footer .footer-divider{width:40px;height:2px;background:linear-gradient(90deg,transparent,#334155,transparent);margin:16px auto}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .grid-2{grid-template-columns:1fr}
+  .member-header{flex-direction:column}
+  .header h1{font-size:2.2rem;letter-spacing:3px}
+  .header .tagline{font-size:0.95rem}
+  .stats-bar{gap:10px}
+  .stat-item{min-width:100px;padding:12px 16px}
+  .card-body{padding:18px 20px 22px}
+  .member-header{padding:18px 20px 14px}
+}
+
+/* ===== PRINT — PRESERVE DARK THEME ===== */
+@page{
+  size:A4;
+  margin:8mm 10mm;
+}
+@media print{
+  /* Suppress browser header/footer URLs */
+  @page{margin:8mm 10mm}
+
+  html{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important}
+  body{
+    background:#080e1a !important;color:#e2e8f0 !important;padding:0;
+    -webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;
+  }
+  body::before{display:none}
+  .page-wrapper{padding:10px 14px}
+
+  /* Header — keep dark mountain theme */
+  .header{
+    background:linear-gradient(180deg,#060d1a 0%,#0c1929 15%,#122240 30%,#1a3055 50%,#243b65 65%,#2d4a78 75%,#1e3a5f 88%,#0f2847 100%) !important;
+    border-radius:0 0 16px 16px !important;
+    -webkit-print-color-adjust:exact !important;
+  }
+  .header h1{color:#ffffff !important;text-shadow:none !important}
+  .header .tagline{color:#a5b4fc !important}
+  .header .subtitle{color:#cbd5e1 !important;text-shadow:none !important}
+  .header .stars::before{display:none}
+
+  /* Stats bar */
+  .stats-bar{
+    background:rgba(15,23,42,0.95) !important;border:1px solid rgba(99,102,241,0.15) !important;
+    box-shadow:none;top:-10px;-webkit-print-color-adjust:exact !important;
+  }
+  .stat-item{background:rgba(30,41,59,0.8) !important;border:1px solid rgba(99,102,241,0.1) !important}
+  .stat-item .number{-webkit-text-fill-color:#a78bfa !important;color:#a78bfa !important}
+  .stat-item .label{color:#94a3b8 !important}
+
+  /* Member cards — keep dark */
+  .member-card{
+    background:rgba(30,41,59,0.95) !important;
+    border:1px solid rgba(99,102,241,0.1) !important;
+    box-shadow:none;page-break-inside:avoid;backdrop-filter:none;
+    -webkit-print-color-adjust:exact !important;
+  }
+  .member-card:hover{transform:none;box-shadow:none}
+  .member-header{background:rgba(99,102,241,0.08) !important;-webkit-print-color-adjust:exact !important}
+  .member-name{color:#e0e7ff !important}
+  .member-role{color:#6ee7b7 !important}
+  .member-exp{background:#312e81 !important;color:#c4b5fd !important;-webkit-print-color-adjust:exact !important}
+  .card-body{padding:20px 24px}
+
+  /* Sections */
+  .section-title{color:#fbbf24 !important;border-bottom-color:rgba(251,191,36,0.15) !important}
+  .section-content{color:#cbd5e1 !important}
+  .section-content ul li::before{color:#818cf8 !important}
+
+  /* Job blocks */
+  .job-block{
+    background:rgba(22,32,50,0.8) !important;
+    border-left:3px solid #6366f1 !important;
+    border-top:1px solid rgba(99,102,241,0.08) !important;
+    border-right:1px solid rgba(99,102,241,0.08) !important;
+    border-bottom:1px solid rgba(99,102,241,0.08) !important;
+    -webkit-print-color-adjust:exact !important;
+  }
+  .job-title{color:#93c5fd !important}
+  .job-company{color:#94a3b8 !important}
+  .job-duration{color:#64748b !important}
+
+  /* Tags */
+  .tag{-webkit-print-color-adjust:exact !important}
+  .tag-purple{background:rgba(49,46,129,0.6) !important;color:#c4b5fd !important;border:1px solid rgba(196,181,253,0.15) !important}
+  .tag-green{background:rgba(6,78,59,0.5) !important;color:#6ee7b7 !important;border:1px solid rgba(110,231,183,0.15) !important}
+  .tag-blue{background:rgba(30,58,95,0.5) !important;color:#7dd3fc !important;border:1px solid rgba(125,211,252,0.15) !important}
+  .tag-orange{background:rgba(120,53,15,0.5) !important;color:#fbbf24 !important;border:1px solid rgba(251,191,36,0.15) !important}
+
+  /* Certs & Links */
+  .cert-item{background:rgba(26,35,50,0.8) !important;color:#94a3b8 !important;border:1px solid rgba(148,163,184,0.1) !important;-webkit-print-color-adjust:exact !important}
+  .links-section a{background:rgba(30,27,75,0.8) !important;color:#c4b5fd !important;border:1px solid rgba(99,102,241,0.25) !important;box-shadow:none;-webkit-print-color-adjust:exact !important}
+
+  /* Footer */
+  .footer{background:transparent !important;border:none}
+  .footer-brand{color:#a78bfa !important}
+  .footer a{color:#818cf8 !important}
+  .footer p,.footer .footer-note{color:#64748b !important}
+}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="stars"></div>
+<div class="mountain-layer">
+<svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Far mountains (lighter, more distant) -->
+<path d="M0,200 L0,140 Q60,80 120,120 Q180,70 240,105 Q320,40 400,90 Q460,55 520,85 Q600,30 680,75 Q740,50 800,70 Q880,20 960,65 Q1020,40 1080,80 Q1140,35 1200,70 Q1280,45 1360,90 Q1400,75 1440,100 L1440,200 Z" fill="rgba(30,58,95,0.4)"></path>
+<!-- Mid mountains -->
+<path d="M0,200 L0,160 Q80,110 160,140 Q240,90 320,130 Q400,80 480,120 Q560,70 640,110 Q720,85 800,100 Q880,60 960,95 Q1040,75 1120,110 Q1200,80 1280,120 Q1360,100 1440,130 L1440,200 Z" fill="rgba(20,45,75,0.5)"></path>
+<!-- Near mountains (darker, closer) -->
+<path d="M0,200 L0,170 Q100,135 200,160 Q300,120 400,155 Q500,130 600,150 Q700,120 800,145 Q900,125 1000,140 Q1100,130 1200,155 Q1300,140 1440,160 L1440,200 Z" fill="rgba(12,25,41,0.7)"></path>
+<!-- Ground/treeline -->
+<path d="M0,200 L0,185 Q100,175 200,182 Q300,170 400,180 Q500,172 600,178 Q700,168 800,176 Q900,172 1000,180 Q1100,174 1200,182 Q1300,178 1440,185 L1440,200 Z" fill="#0c1929"></path>
+</svg>
+</div>
+<div class="content-wrapper">
+<h1>COGNYZER</h1>
+<div class="tagline">Team Portfolio</div>
+<div class="divider-line"></div>
+<div class="subtitle">Our team specializes in model training, task &amp; evaluation creation for SOTA models, dataset generation, and real-world benchmark development including Terminal-Bench, OSWorld, and SWE-Bench. We work with companies to create tasks and evaluations that break state-of-the-art models and train them on real-world problems.</div>
+</div>
+</div>
+
+<!-- ==================== MEMBER 1: NAVEEN KATIYAR ==================== -->
+
+<!-- ==================== MEMBER 2: GIRISH HIREMATH ==================== -->
+
+<!-- ==================== MEMBER 3: FAWAZ OLOKODANA ==================== -->
+
+<!-- ==================== MEMBER 4: TOYGAR AKSOY ==================== -->
+
+<!-- ==================== MEMBER 5: KIRAN VIGNESH K ==================== -->
+
+<!-- ==================== MEMBER 6: KARTIK RAVINDRAN ==================== -->
+
+<!-- ==================== MEMBER 7: KOUSHIK JALAN ==================== -->
+
+<!-- ==================== MEMBER 8: SHIVA SAI GOUD ==================== -->
+
+<!-- ==================== MEMBER 9: ANSH JAIN ==================== -->
+
+<!-- ==================== MEMBER 10: DUSHYANT AGRE ==================== -->
+
+<!-- ==================== MEMBER 11: SHRUTI GAHLAUT ==================== -->
+
+<!-- ==================== MEMBER 12: AJAY SINDOLIA ==================== -->
+
+<!-- ==================== MEMBER 13: VAIBHAV PAL ==================== -->
+
+<!-- ==================== MEMBER 14: SARABJEET SODHI ==================== -->
+
+<!-- ==================== MEMBER 15: AYUSH ANAND ==================== -->
+
+<!-- ==================== MEMBER 16: AYUSH KUMAR ==================== -->
+
+<!-- ==================== MEMBER 17: SHILPI DEVI ==================== -->
+
+<!-- ==================== FOOTER ==================== -->
+
+<div class="page-wrapper"><div class="stats-bar">
+<div class="stat-item"><div class="number">17</div><div class="label">Team Members</div></div>
+<div class="stat-item"><div class="number">70+</div><div class="label">Combined Years of Experience</div></div>
+<div class="stat-item"><div class="number">10+</div><div class="label">Tech Domains Covered</div></div>
+<div class="stat-item"><div class="number">15+</div><div class="label">Enterprise Clients Served</div></div>
+</div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">1. Naveen K.</div><div class="member-role">AI Engineer — Turing | Terminal &amp; OS Interaction Benchmarking</div></div>
+<div class="member-exp">~2.5 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Computer Science Engineering</strong></li>
+<li>Manipal University Jaipur (Sep 2020 – Jul 2024)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>Oracle Tier Contributor (Top 1%) at Outlier — elite recognition for AI evaluation quality.</li>
+<li>Senior Reviewer leading LLM evaluation audits across multiple programming languages.</li>
+<li>Built large-scale OS interaction benchmarks for autonomous AI agents.</li>
+<li>Photography Mentor — directed team of 17 photographers, managed media for events with 10,000+ attendees.</li>
+<li>Core Committee Member of Oneiros'22 cultural fest (15K+ attendees).</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">C++</span> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">Go</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">PyTorch</span> <span class="tag tag-green">TensorFlow</span> <span class="tag tag-green">Scikit-learn</span> <span class="tag tag-green">Hugging Face</span> <span class="tag tag-green">RLHF</span> <span class="tag tag-green">SFT</span> <span class="tag tag-green">Prompt Engineering</span> <span class="tag tag-green">Model Evaluation</span> <span class="tag tag-green">Bias Reduction</span></div>
+<div><strong>Technologies:</strong> <span class="tag tag-blue">AWS</span> <span class="tag tag-blue">Docker</span> <span class="tag tag-blue">Kubernetes</span> <span class="tag tag-blue">React.js</span> <span class="tag tag-blue">Power Automate</span> <span class="tag tag-blue">Power App</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-purple">VS Code</span> <span class="tag tag-purple">Cursor</span> <span class="tag tag-purple">Git</span> <span class="tag tag-purple">GitHub</span> <span class="tag tag-purple">Postman</span></div>
+<div><strong>Automation:</strong> <span class="tag tag-orange">Containerized Environments</span> <span class="tag tag-orange">Automation Scripting (Python/Bash)</span> <span class="tag tag-orange">CLI Interactions</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">AI Engineer — Terminal and OS Interaction Benchmarking</div>
+<div class="job-company">Turing | Remote</div>
+<div class="job-duration">Oct 2025 – Present</div>
+<ul>
+<li>Built and validated large-scale OS interaction evaluation benchmarks for autonomous agents by designing non-trivial task specifications, deterministic environment setups, and exploit-resistant evaluators.</li>
+<li>Contributed to creating Advanced CLI tasks designed to evaluate technical reasoning and problem-solving capabilities in AI systems, ensuring clarity, consistency, and high engineering standards.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">AI Trainer &amp; Prompt Engineer — Oracle Tier Contributor (Top 1%)</div>
+<div class="job-company">Outlier | Remote</div>
+<div class="job-duration">Aug 2024 – Oct 2025</div>
+<ul>
+<li>Achieved Oracle Tier Contributor status (top 1%) for consistently delivering high-quality AI evaluations, including prompt engineering, rubric design, and failure mode analysis across real-world codebases (Go, React, Python, C++).</li>
+<li>Promoted to Senior Reviewer on different projects, leading LLM evaluation audits on code generation, scalability risks, concurrency patterns, and control flow mapping, improving rubric precision by over 50%.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Power App Developer</div>
+<div class="job-company">Celebal Technologies | Internship</div>
+<div class="job-duration">May 2023 – Jul 2023</div>
+<ul>
+<li>Executed 10+ hands-on projects, including geofence, CRUD, forms, and dashboard-based apps.</li>
+<li>Automating 40% of business processes to enhance efficiency and productivity.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Salesforce Developer (Virtual) — Trailblazer, Developer Super Set</div>
+<div class="job-company">Deloitte</div>
+<div class="job-duration">May 2023 – Jul 2023</div>
+<ul>
+<li>Earned the capstone credential by gaining skills across Apex programming, process automation, and screen flow management.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Robot Navigation System:</strong> Python, A* Pathfinding, Pygame, ML — Achieved 95% accuracy in optimal route calculation in a grid-based warehouse environment with real-time obstacle detection. Created visual simulation with live updates.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications</div>
+<div class="section-content">
+<span class="cert-item">Generative AI with LLMs — AWS &amp; DeepLearning.AI</span>
+<span class="cert-item">Python for Data Science, AI &amp; Development — IBM</span>
+<span class="cert-item">PCAP: Python — Cisco &amp; OpenEDG</span>
+<span class="cert-item">Salesforce Developer Super Set</span>
+<span class="cert-item">AWS Academy Cloud Foundations</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">2. Girish H.</div><div class="member-role">Senior Full Stack Developer &amp; LLM Trainer/Evaluator</div></div>
+<div class="member-exp">13+ Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>Engineering Graduate</strong></li>
+<li>AI Engineering Accelerator Program — Outskill (Dec 2025)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>13+ years spanning Pharma, Banking, Telecom, and IoT domains.</li>
+<li>Employee of the Month awardee. Selected for leadership training programs.</li>
+<li>Led LLM evaluation across OSWorld, Terminal-Bench, and SWE-Bench.</li>
+<li>Worked with top-tier clients: Labcorp, Santander, Wells Fargo, JPMC, Ericsson, Qualcomm.</li>
+<li>Scrum Master experience leading cross-functional teams.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Java (8, 11, 17)</span> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">TypeScript</span> <span class="tag tag-purple">JavaScript</span> <span class="tag tag-purple">SQL</span> <span class="tag tag-purple">Shell/Bash</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">RLHF</span> <span class="tag tag-green">SFT</span> <span class="tag tag-green">AI Agent Dev</span> <span class="tag tag-green">RAG Systems</span> <span class="tag tag-green">LangChain</span> <span class="tag tag-green">LlamaIndex</span> <span class="tag tag-green">Prompt Engineering</span> <span class="tag tag-green">AI Alignment &amp; Safety</span> <span class="tag tag-green">Preference Modeling</span></div>
+<div><strong>Benchmarks:</strong> <span class="tag tag-orange">OSWorld</span> <span class="tag tag-orange">Terminal-Bench</span> <span class="tag tag-orange">SWE-Bench</span> <span class="tag tag-orange">Human-in-the-Loop Eval</span></div>
+<div><strong>Cloud &amp; DevOps:</strong> <span class="tag tag-blue">AWS</span> <span class="tag tag-blue">Azure</span> <span class="tag tag-blue">Docker</span> <span class="tag tag-blue">Kubernetes</span> <span class="tag tag-blue">Jenkins</span> <span class="tag tag-blue">OpenShift</span></div>
+<div><strong>Frameworks:</strong> <span class="tag tag-purple">Spring Boot</span> <span class="tag tag-purple">Angular (7-15)</span> <span class="tag tag-purple">Hibernate/JPA</span> <span class="tag tag-purple">Microservices</span></div>
+<div><strong>Databases:</strong> <span class="tag tag-blue">Oracle 11g</span> <span class="tag tag-blue">HBase</span> <span class="tag tag-blue">NuoDB</span> <span class="tag tag-blue">MySQL</span></div>
+<div><strong>Testing:</strong> <span class="tag tag-purple">JUnit 4/5</span> <span class="tag tag-purple">Mockito</span> <span class="tag tag-purple">PowerMock</span> <span class="tag tag-purple">Protractor</span> <span class="tag tag-purple">Jasmine</span> <span class="tag tag-purple">Cypress</span></div>
+<div><strong>Platforms:</strong> <span class="tag tag-blue">Linux/Unix</span> <span class="tag tag-blue">macOS</span> <span class="tag tag-blue">Windows</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">LLM Trainer &amp; Evaluator</div>
+<div class="job-company">Turing (Remote)</div>
+<div class="job-duration">Mar 2025 – Present</div>
+<ul>
+<li>Spearheaded end-to-end training and evaluation of LLMs to enhance reasoning, coding, and tool-use capabilities.</li>
+<li>Designed and executed RLHF pipelines, crafting preference datasets and optimizing model outputs for alignment, safety, and helpfulness.</li>
+<li>Performed Supervised Fine-Tuning (SFT) on diverse datasets for complex reasoning and code generation.</li>
+<li>Led rigorous benchmarking across OSWorld &amp; Terminal Bench (multi-step CLI tasks), and SWE-Bench (real-world GitHub issues).</li>
+<li>Analyzed evaluation results to generate actionable insights guiding iterative model improvements.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Senior Full Stack Developer</div>
+<div class="job-company">Wissen Infotech — Client: Labcorp Inc. (Pharma)</div>
+<div class="job-duration">Oct 2023 – Mar 2025</div>
+<ul>
+<li>Led Agile team of 7 developers. Architected Spring Boot Microservices using Java 17, increasing scalability by 30%.</li>
+<li>Delivered Angular 15 UI components improving user engagement by 35%. Achieved 85-90% test coverage.</li>
+<li>Streamlined Jenkins CI/CD pipeline, reducing deployment time by 40%.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Senior Full Stack Developer</div>
+<div class="job-company">Client: Santander (Banking)</div>
+<div class="job-duration">Dec 2021 – Sep 2023</div>
+<ul>
+<li>Personal Accounts &amp; Core API Platform. Java 11, Spring Boot, Angular 12, Docker/Kubernetes/OpenShift.</li>
+<li>Increased backend performance by 25%, handled 40% increase in user traffic.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Senior Full Stack Engineer</div>
+<div class="job-company">Client: Wells Fargo (Financial Crimes Platform)</div>
+<div class="job-duration">Dec 2020 – Dec 2021</div>
+<ul><li>AML &amp; financial crimes compliance platform. Migrated 20+ legacy YUI/jQuery components to Angular 10.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">Senior Full Stack Developer</div>
+<div class="job-company">Client: JPMC (Client Onboarding Lifecycle Tool)</div>
+<div class="job-duration">Apr 2019 – Dec 2020</div>
+<ul><li>Web-based client onboarding platform on AWS/Pivotal Cloud Foundry. 98% code coverage.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">Module Lead &amp; Senior Software Developer</div>
+<div class="job-company">Client: Ericsson</div>
+<div class="job-duration">Sep 2016 – Mar 2019</div>
+<ul><li>Test Results Data Visualization using Java, RabbitMQ, ElasticSearch, Kibana, Linux, AWS. 13M+ test results.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">Software Developer / IoT Engineer</div>
+<div class="job-company">Client: Qualcomm</div>
+<div class="job-duration">Feb 2012 – Aug 2016</div>
+<ul>
+<li>IoE Cloud Client Agent — Embedded C, Java, CoAP Protocol, ThreadX RTOS.</li>
+<li>QChat Client Test automation, Hindi Reader Application (OpenCV, ANN), LTE UE &amp; eNB Simulator.</li>
+<li>Online Test Taking System — Java/J2EE, Bootstrap, Oracle DB.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">3. Fawaz O.</div><div class="member-role">Prompt Engineer / LLM QA &amp; Data Scientist</div></div>
+<div class="member-exp">6+ Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>BSc. Computer Science (Second Class Upper)</strong></li>
+<li>Babcock University, Nigeria (2018)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>6+ years as a Data Scientist/ML Engineer across EY, Snapnet, and Turing.</li>
+<li>Designed multimodal evaluation tasks for GUI &amp; CLI across OSWorld and Terminal-Bench.</li>
+<li>Analyzed LLM failure modes across GPT-class, Claude-class, and open-source models.</li>
+<li>Built fraud detection (98% accuracy), churn analytics, and demand forecasting models.</li>
+<li>Enterprise clients in banking, oil &amp; gas, manufacturing, and financial services.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">SQL</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">Machine Learning</span> <span class="tag tag-green">BERT</span> <span class="tag tag-green">CNN</span> <span class="tag tag-green">ANN</span> <span class="tag tag-green">Computer Vision</span> <span class="tag tag-green">NLP</span> <span class="tag tag-green">LangChain</span> <span class="tag tag-green">OpenAI LLMs</span> <span class="tag tag-green">Prompt Engineering</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-blue">PySpark</span> <span class="tag tag-blue">Flask</span> <span class="tag tag-blue">FastAPI</span> <span class="tag tag-blue">Docker</span> <span class="tag tag-blue">Azure ML</span> <span class="tag tag-blue">Power BI</span> <span class="tag tag-blue">Streamlit</span></div>
+<div><strong>Libraries:</strong> <span class="tag tag-purple">NumPy</span> <span class="tag tag-purple">Pandas</span> <span class="tag tag-purple">Scikit-Learn</span> <span class="tag tag-purple">Keras</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Prompt Engineering - LLM QA</div>
+<div class="job-company">Turing | Remote (Palo Alto, California)</div>
+<div class="job-duration">Sep 2024 – Present</div>
+<ul>
+<li>Designed and iteratively refined prompts to evaluate LLM performance on Python Programming tasks.</li>
+<li>Developed test cases and benchmarking scripts to assess model accuracy, edge-case handling, and logical consistency.</li>
+<li>Identified model limitations and failure modes by probing with adversarial prompts.</li>
+<li><strong>LLM Evaluation &amp; Benchmarking (OSWorld, Terminal-Bench):</strong></li>
+<li>Designed complex multimodal evaluation tasks covering GUI automation, file operations, scientific computing, and tool-use reasoning.</li>
+<li>Built deterministic evaluators and test harnesses (Python, Bash, PyTest) to validate strict instruction-execution alignment.</li>
+<li>Created OSWorld SFT trajectories with pixel-accurate visual grounding across LibreOffice, GIMP, VLC, and Ubuntu tools.</li>
+<li>Developed Terminal-Bench tasks with Dockerized, reproducible environments enforcing canonical outputs.</li>
+<li>Analyzed LLM failure modes across GPT-class, Claude-class, and open-source models.</li>
+<li>Refined evaluator logic using pass@k metrics and reviewer feedback.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Data Scientist / Machine Learning Engineer</div>
+<div class="job-company">Ernest &amp; Young (EY) | Lagos, Nigeria</div>
+<div class="job-duration">Oct 2021 – Sep 2024</div>
+<ul>
+<li>Applied BERT to build high-quality text classification models.</li>
+<li>Designed and deployed intelligent chatbots using OpenAI's LLMs, LangChain, FastAPI, and Docker.</li>
+<li>Built fraud detection model for a leading bank using ANN — 98% accuracy, 90% precision.</li>
+<li>Built CNN model using Error Level Analysis for image spoofing detection — 98% accuracy, 0.9 AUC.</li>
+<li>Deployed churn analytics solution using Flask and ANN for customer experience team.</li>
+<li>Created demand forecast model for n-period prediction, deployed using Flask.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Data Scientist</div>
+<div class="job-company">Snapnet | Lagos, Nigeria</div>
+<div class="job-duration">Jan 2019 – Oct 2021</div>
+<ul>
+<li>Built customer attrition model for a major bank — 90 F1 score, deployed on Azure ML Service.</li>
+<li>Built ML pipelines for sales forecasting — RMSE 0.7, R² of 80%.</li>
+<li>Integrated millions of records from client source databases to data lake.</li>
+<li>Developed Power BI dashboards for public sector, oil &amp; gas, manufacturing, financial services.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">4. Toygar A.</div><div class="member-role">Pod Lead — LLM Agent Task Design &amp; Review | Python Backend Developer</div></div>
+<div class="member-exp">4+ Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>AS in Computer Programming</strong> — Ataturk University (2023)</li>
+<li><strong>BS in Environmental Engineering</strong> — Anadolu University (2010)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>Led 7-person pod for LLM agent task design across Terminal-Bench &amp; OS-World.</li>
+<li>Python Team Lead of open-source Hypance project (published on PyPI).</li>
+<li>TensorFlow Developer Certificate from Google.</li>
+<li>Published technical Python books.</li>
+<li>EU/US timezone flexible (Turkey-based).</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Backend:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">Django</span> <span class="tag tag-purple">FastAPI</span> <span class="tag tag-purple">REST APIs</span> <span class="tag tag-purple">Microservices</span></div>
+<div><strong>DevOps:</strong> <span class="tag tag-blue">Docker</span> <span class="tag tag-blue">GitHub Actions</span> <span class="tag tag-blue">CI/CD</span> <span class="tag tag-blue">TDD</span></div>
+<div><strong>Data:</strong> <span class="tag tag-blue">Apache NiFi</span> <span class="tag tag-blue">Data Pipelines</span> <span class="tag tag-blue">E-commerce APIs</span></div>
+<div><strong>AI/Eval:</strong> <span class="tag tag-green">LLM Agent Evaluation</span> <span class="tag tag-green">pyautogui</span> <span class="tag tag-green">Terminal-Bench</span> <span class="tag tag-green">OS-World</span></div>
+<div><strong>Specializations:</strong> <span class="tag tag-orange">Legacy System Modernization</span> <span class="tag tag-orange">Production Debugging</span> <span class="tag tag-orange">Backend Refactoring</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Pod Lead — LLM Agent Task Design &amp; Review</div>
+<div class="job-company">Turing | Remote</div>
+<div class="job-duration">Sep 2025 – Present</div>
+<ul>
+<li>Led a 7-person pod designing and reviewing evaluation tasks for tool-using LLM agents across terminal and desktop environments.</li>
+<li>Designed OS-level evaluation tasks using bash and pyautogui, establishing quality standards for deterministic and reproducible test design.</li>
+<li>Audited tasks across Terminal-Bench (CLI) and OS-World (GUI) frameworks for evaluator correctness, oracle alignment, and test coverage.</li>
+<li>Identified and repaired structurally broken tasks, improving pipeline reliability.</li>
+<li>Mentored contributors on task quality and evaluation methodology.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Python Developer</div>
+<div class="job-company">CloudSigma | Remote</div>
+<div class="job-duration">Jun 2024 – Jul 2025</div>
+<ul>
+<li>Owned critical microservice managing infrastructure operations in distributed cloud environment.</li>
+<li>Designed core features in FastAPI-based backend serving enterprise clients.</li>
+<li>Built comprehensive testing suite and documentation for system reliability.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Python/Django Developer</div>
+<div class="job-company">Akinon | Remote</div>
+<div class="job-duration">Jul 2022 – Jun 2024</div>
+<ul>
+<li>Developed marketplace integrations processing thousands of daily transactions.</li>
+<li>Designed Apache NiFi data processing workflows for real-time data transformation.</li>
+<li>Modernized legacy Django 1.11 systems improving maintainability and performance.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Software Engineer</div>
+<div class="job-company">Plentific | Remote</div>
+<div class="job-duration">Feb 2022 – Jul 2022</div>
+<ul><li>Property management platform APIs for UK market. ERP system refactoring.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">Python Developer (Contract)</div>
+<div class="job-company">Independent Client | Istanbul</div>
+<div class="job-duration">Aug 2020 – Nov 2021</div>
+<ul><li>End-to-end Django-based business management system for manufacturing. Automated data pipelines.</li></ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications &amp; Publications</div>
+<div class="section-content">
+<span class="cert-item">TensorFlow Developer Certificate — Google (2023)</span>
+<span class="cert-item">Technical Mentor — Sisterslab Mentorship Program (2022)</span>
+<span class="cert-item">Co-author: "OpenCV ve Python" (Book)</span>
+<span class="cert-item">Co-author: "Yeni Başlayanlar İçin Python" (Book)</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">5. Kiran V. K.</div><div class="member-role">Delivery Data Analyst / Pod Lead (Meta)</div></div>
+<div class="member-exp">~2 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in AI &amp; Data Science</strong> — 85.90%</li>
+<li>Easwari Engineering College, Chennai (2020–2024)</li>
+<li>XII CBSE — 78.60% | XI CBSE — 84.8% (Velammal Vidyalaya, Chennai)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>Top-performing trainer for complex LLM projects at Meta, Apple, and Alibaba.</li>
+<li>Pod Lead for Meta — manages end-to-end task assignment, QA, and delivery.</li>
+<li>Contributed to TerminalBench and OSWorld benchmarks.</li>
+<li>Published research paper on AI-enhanced fitness tracking (IRJET).</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🔗 Competitive Programming</div>
+<div class="section-content links-section">
+<a href="https://www.hackerrank.com/profile/aikiranvignesh" target="_blank">🏅 HackerRank — 5★ Python | 5★ SQL</a>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Programming:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">SQL</span> <span class="tag tag-purple">JavaScript</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">Machine Learning</span> <span class="tag tag-green">Deep Learning</span> <span class="tag tag-green">SFT</span> <span class="tag tag-green">RLHF</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-blue">Tableau</span> <span class="tag tag-blue">MS Excel</span> <span class="tag tag-blue">MS PowerPoint</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Delivery Data Analyst / Pod Lead</div>
+<div class="job-company">Turing</div>
+<div class="job-duration">Aug 2024 – Present</div>
+<ul>
+<li>Top-performing trainer: Delivered high-accuracy training/evaluation on complex LLM projects for <strong>Meta, Apple, and Alibaba</strong>.</li>
+<li>Focus on edge cases, long-context reasoning, and strict instruction adherence.</li>
+<li>Pod Lead (Meta): Led pod execution end-to-end — task assignment, daily QA, escalation handling, and on-time delivery.</li>
+<li>SWE-skill projects: Contributed to code-and-tooling heavy benchmarks including <strong>TerminalBench and OSWorld</strong>.</li>
+<li>Complex visualization (Meta): Worked on high-difficulty visualization understanding/verification tasks.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Machine Learning Intern</div>
+<div class="job-company">CyberSnow</div>
+<div class="job-duration">Feb 2024 – Apr 2024</div>
+<ul>
+<li>Developed a chatbot leveraging OCR and NLP technologies to analyze PDFs and facilitate interactive queries.</li>
+<li>Utilized deep learning techniques for efficient data extraction from PDFs and web sources.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Visual Dashboard for Report Analysis</strong> (Tableau)</li>
+<li><strong>Face Recognition</strong> using Python</li>
+<li><strong>Neural Network and CNN Model</strong> using Python</li>
+<li><strong>Classification of Arrhythmia</strong> (Medical Data ML)</li>
+<li><strong>Chatbot Powered by AI</strong> (LLM-based)</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications &amp; Achievements</div>
+<div class="section-content">
+<span class="cert-item">Python for Data Science (Advanced) — DataCamp</span>
+<span class="cert-item">Creative Problem Solving — ICT &amp; Udemy</span>
+<span class="cert-item">Digital Marketing &amp; SEO — Skillshop</span>
+<ul style="margin-top:8px">
+<li>Publication: 'Enhanced Fitness Tracking using AI&amp;ML' approved by IRJET</li>
+<li>Students Council: Head of Photography (2022), Department Ambassador (2022–2024), Department Treasurer (2023)</li>
+</ul>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">6. Kartik R.</div><div class="member-role">Team Lead — LLM Scientific Computing | Python Developer</div></div>
+<div class="member-exp">~2 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Computer &amp; Communication Engineering</strong> — CGPA: 7.88</li>
+<li>Manipal University Jaipur (2020–2024)</li>
+<li>Higher Secondary — GPA: 8.4 (Puna International School, Ahmedabad)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>Team Lead designing adversarial tasks and benchmark datasets for SOTA models.</li>
+<li>Amazon ML Summer School alumnus — comprehensive ML training.</li>
+<li>Core Member of Randomize MUJ() — hosted 5+ coding events and workshops.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">RDBMS</span> <span class="tag tag-purple">OOP</span></div>
+<div><strong>ML Libraries:</strong> <span class="tag tag-green">Pandas</span> <span class="tag tag-green">Matplotlib</span> <span class="tag tag-green">Scikit-learn</span> <span class="tag tag-green">Keras</span> <span class="tag tag-green">NumPy</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-blue">Git/GitHub</span> <span class="tag tag-blue">VS Code</span> <span class="tag tag-blue">MySQL</span> <span class="tag tag-blue">Excel</span> <span class="tag tag-blue">Jupyter Notebook</span> <span class="tag tag-blue">Docker</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Team Lead — LLM Scientific Computing</div>
+<div class="job-company">Turing | Remote</div>
+<div class="job-duration">Sep 2025 – Present</div>
+<ul>
+<li>Leading a team focused on advancing LLM capabilities through scientific computing tasks designed to challenge SOTA models.</li>
+<li>Mentoring and training team members in LLM fine-tuning, evaluation, and research best practices.</li>
+<li>Overseeing development of complex experiments using Docker containers and VS Code for reproducibility and scalability.</li>
+<li>Collaborating on designing adversarial tasks, benchmark datasets, and robust pipelines for generative AI.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Python Developer — LLM &amp; SFT Pipelines</div>
+<div class="job-company">Turing | Remote</div>
+<div class="job-duration">Jul 2024 – Present</div>
+<ul>
+<li>Leveraged expertise in LLM, NLP, and Prompt Engineering to design SFT pipelines.</li>
+<li>Utilized Python, Machine Learning, and Data Analysis to optimize AI model training processes.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Amazon ML Summer School</div>
+<div class="job-company">Amazon</div>
+<div class="job-duration">Sep 2023 – Nov 2023</div>
+<ul><li>Supervised Learning, Deep Neural Networks, Dimensionality Reduction, Unsupervised Learning, Probabilistic Graphical Models, Sequential Learning, Causal Inference, Reinforcement Learning.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">Data Science Intern</div>
+<div class="job-company">Unified Mentor</div>
+<div class="job-duration">Apr 2024 – Jun 2024</div>
+<ul><li>Financial Analytics, Heart Disease Diagnostics, FDI Analysis. Exploratory Data Analysis and Predictive Models.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">Salesforce Developer Virtual Internship</div>
+<div class="job-company">SmartInternz / Salesforce / AICTE</div>
+<div class="job-duration">May 2023 – Jul 2023</div>
+<ul><li>Salesforce Fundamentals, Process Automation, Apex, Lightning Web Components &amp; API.</li></ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Stock Prediction and Analysis:</strong> ML-based system — improved portfolio performance by 22% in 12 months with 78% accuracy. Optimized data workflows by 30%.</li>
+<li><strong>Attendance System using Real-Time Face Recognition:</strong> OpenCV &amp; Haar cascades — 98% accuracy. Reduced identification times by 40%.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications</div>
+<div class="section-content">
+<span class="cert-item">Software Engineering: Modeling Software Systems using UML — Coursera (HK UST)</span>
+<span class="cert-item">PCAP: Python — Cisco &amp; OpenEDG</span>
+<span class="cert-item">Programming for Everybody (Python) — Coursera (U of Michigan)</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">7. Koushik J.</div><div class="member-role">C++/LLM Engineer &amp; Quantitative Researcher</div></div>
+<div class="member-exp">~1.5 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Computer Science &amp; Engineering</strong></li>
+<li>Indian Institute of Information Technology (IIIT), Ranchi (2022–2026)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>Created tasks with 100% model fail rate across 5 AI systems.</li>
+<li>Top performer (1st/40+) at Mercor — created 70+ AI agent evaluation problems.</li>
+<li>Candidate Master at Codeforces, 6-Star at CodeChef.</li>
+<li>AIR 19 in ICPC Chennai Regionals 2025.</li>
+<li>Captain, Chess Club, IIIT Ranchi.</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🔗 Competitive Programming Profiles &amp; Achievements</div>
+<div class="section-content links-section">
+<a href="https://codeforces.com/profile/koushikjalan" target="_blank">🏅 Codeforces — Candidate Master (Rating: 1927)</a>
+<a href="https://www.codechef.com/users/koushikjalan" target="_blank">🏅 CodeChef — 6★ (Rating: 2220)</a>
+<a href="https://leetcode.com/koushikjalan" target="_blank">🏅 LeetCode</a>
+<a href="https://github.com/koushikjalan" target="_blank">🏅 GitHub</a>
+</div>
+<ul style="margin-top:8px">
+<li>AIR 19 in ICPC Chennai Regionals 2025</li>
+<li>AIR 2 at SourceCode (Kshitij) — IIT-KGP</li>
+<li>AIR 18 at Codeforces Round 969 (Div-2) out of 28k+ participants</li>
+<li>Silver Medal representing India at SASMO '18 (Singapore)</li>
+</ul>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">C++</span> <span class="tag tag-purple">Python (NumPy/Pandas)</span> <span class="tag tag-purple">JavaScript</span> <span class="tag tag-purple">C</span> <span class="tag tag-purple">Java</span></div>
+<div><strong>Quant &amp; Data:</strong> <span class="tag tag-green">Backtesting</span> <span class="tag tag-green">Signal Research</span> <span class="tag tag-green">Time-Series Analysis</span> <span class="tag tag-green">Performance Metrics</span></div>
+<div><strong>Databases:</strong> <span class="tag tag-blue">MongoDB</span> <span class="tag tag-blue">MySQL</span></div>
+<div><strong>Infra:</strong> <span class="tag tag-blue">Linux</span> <span class="tag tag-blue">Git</span> <span class="tag tag-blue">Docker</span> <span class="tag tag-blue">CI</span> <span class="tag tag-blue">Multithreading</span> <span class="tag tag-blue">Low-latency techniques</span></div>
+<div><strong>Web:</strong> <span class="tag tag-purple">Next.js</span> <span class="tag tag-purple">Prisma</span> <span class="tag tag-purple">React-Quill</span> <span class="tag tag-purple">Gemini API</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Quantitative Researcher Intern</div>
+<div class="job-company">OptimusPrime Securities and Research LLP | Bengaluru</div>
+<div class="job-duration">Jan 2026 – Present</div>
+<ul><li>Developing and backtesting mid-frequency algorithmic trading strategies, optimizing for risk-adjusted performance using Sharpe, Calmar, and drawdown-based metrics.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">C++/LLM Engineer (Contractor)</div>
+<div class="job-company">Turing | Remote, USA</div>
+<div class="job-duration">Jul 2025 – Jan 2026</div>
+<ul>
+<li>Created 6+ competitive-programming tasks exposing reasoning/code-gen failures with a <strong>100% model fail rate across 5 systems</strong>.</li>
+<li>Built high-performance C++ codes for training/eval pipelines, enabling reproducible stress tests and batch scoring.</li>
+<li>Collaborated with <strong>top-200 competitive programmers</strong> and AI Researchers to co-design adversarial tasks.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">AI Engineer (Contractor)</div>
+<div class="job-company">Mercor | Remote, USA</div>
+<div class="job-duration">Aug 2025 – Sep 2025</div>
+<ul>
+<li>Created 70+ challenging evaluation problems for autonomous AI agents across diverse technical domains.</li>
+<li>Automated task creation workflows to achieve <strong>5x-7x productivity gains</strong> (3 hours to 30-45 minutes).</li>
+<li>Awarded <strong>top performer (1st among 40+)</strong> for quality and delivery excellence.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">CP/DSA Mentor</div>
+<div class="job-company">TLE Eliminators (TLE Mentors) | Remote</div>
+<div class="job-duration">Jul 2024 – Jun 2025</div>
+<ul>
+<li>Led weekly coding sessions. Mentored 100+ coders, achieving 70% success rate in improving Codeforces ratings by 200+ points.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>MindInk:</strong> Journaling platform with Clerk auth, React-Quill rich text editing (15+ tools), Prisma ORM, 150-400ms CRUD latency. Real-time sentiment analysis with Gemini API, Recharts dashboards, Arcjet rate limiting. Tech: Next.js, Gemini API, Prisma, React-Quill.</li>
+</ul>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">8. Shiva S. G.</div><div class="member-role">Python Developer / LLM Engineer</div></div>
+<div class="member-exp">~1.5 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Computer Science</strong></li>
+<li>KL University (2020–2024)</li>
+<li>Intermediate — Narayana Junior College (2018–2020)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>Contributed to LLM training for Apple, Tencent, Alibaba, and Cursor.</li>
+<li>Pega Certified Senior System Architect (PCSSA-v8.8).</li>
+<li>Experience in SFT, RLHF, prompt engineering, dataset creation, and model evaluation.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">Java</span> <span class="tag tag-purple">C</span> <span class="tag tag-purple">C++</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">Machine Learning</span> <span class="tag tag-green">LLM Fine-Tuning</span> <span class="tag tag-green">RLHF</span> <span class="tag tag-green">Prompt Engineering</span> <span class="tag tag-green">SFT</span> <span class="tag tag-green">Model Evaluation</span></div>
+<div><strong>Databases:</strong> <span class="tag tag-blue">MySQL</span> <span class="tag tag-blue">MongoDB</span></div>
+<div><strong>Platforms:</strong> <span class="tag tag-blue">Pega (PCSA, PCSSA-v8.8)</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Python Developer — Freelancer / LLM Engineer</div>
+<div class="job-company">Turing | Remote</div>
+<div class="job-duration">Sep 2024 – Present</div>
+<ul>
+<li>Contributed to LLM training and evaluation pipelines for enterprise clients including <strong>Apple, Tencent, Alibaba, and Cursor</strong>.</li>
+<li>Worked on supervised fine-tuning (SFT), RLHF annotation workflows, complex instruction-following tasks, and evaluation test-case creation.</li>
+<li>Designed and optimized prompts for LLM evaluation and instruction-following tasks.</li>
+<li>Built Python scripts for dataset validation, testing, and evaluation workflows.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Code Mixing Translator:</strong> Research-based NLP project for translating code-mixed language into a single language.</li>
+<li><strong>AI Based Obstacle Prevention Tool (AI-OPT):</strong> Object-detection system for vehicles to identify obstacles such as sand piles, pits, and rocks.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications</div>
+<div class="section-content">
+<span class="cert-item">Microsoft Azure Fundamentals</span>
+<span class="cert-item">Pega Certified Senior System Architect (PCSSA)</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">9. Ansh J.</div><div class="member-role">Associate Software Engineer — Data Analyst &amp; AI Training Specialist</div></div>
+<div class="member-exp">~1.5 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Information Technology</strong> — CGPA: 8.26</li>
+<li>Manipal University Jaipur (2020–2024)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>Handles multi-million event data streams daily at Accenture.</li>
+<li>99.9% data quality guarantee for executive reports.</li>
+<li>AI Training Specialist — annotates and validates datasets for LLM training.</li>
+<li>Multi-cloud experience across AWS and Azure environments.</li>
+<li>Healthcare (OhioHealth) and Energy (Halliburton) domain expertise.</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🔗 Competitive Programming</div>
+<div class="section-content links-section">
+<a href="https://www.hackerrank.com/profile/aaansh20" target="_blank">🏅 HackerRank — 3★ SQL | 3★ Python</a>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Programming &amp; Data:</strong> <span class="tag tag-purple">Python (Pandas, NumPy)</span> <span class="tag tag-purple">SQL (CTEs, Window Functions)</span> <span class="tag tag-purple">ML Basics</span></div>
+<div><strong>Visualization:</strong> <span class="tag tag-blue">Power BI</span> <span class="tag tag-blue">Dashboard Reporting</span></div>
+<div><strong>Databases &amp; Tools:</strong> <span class="tag tag-blue">MySQL</span> <span class="tag tag-blue">Jupyter Notebook</span> <span class="tag tag-blue">Excel</span> <span class="tag tag-blue">Kaggle</span></div>
+<div><strong>Other:</strong> <span class="tag tag-green">Generative AI Concepts</span> <span class="tag tag-orange">Data Cleaning</span> <span class="tag tag-orange">Data Validation</span> <span class="tag tag-orange">Automation Scripts</span> <span class="tag tag-blue">AWS</span> <span class="tag tag-orange">Terminal Bench</span> <span class="tag tag-blue">Docker</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Associate Software Engineer — OhioHealth Corporation (Healthcare)</div>
+<div class="job-company">Accenture | Indore</div>
+<div class="job-duration">Oct 2024 – Present</div>
+<ul>
+<li>Analyzed system performance across multi-cloud (AWS, Azure) environments, identifying anomalies and critical data patterns.</li>
+<li>Supported key decision-making by providing technical insights for quarterly operations and compliance strategy.</li>
+<li>Managed and integrated multiple high-volume data sources for continuous, reliable system data flow.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Associate Software Engineer — Halliburton (Energy Sector)</div>
+<div class="job-company">Accenture | Indore</div>
+<div class="job-duration">(Previous Project)</div>
+<ul>
+<li>Built automated Python scripts to clean, parse, and structure massive operational data streams — handling over millions of events daily.</li>
+<li>Ensured data reliability with complex SQL checks across the entire pipeline, guaranteeing 99.9% data quality.</li>
+<li>Standardized team processes by writing comprehensive technical documents.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Data Labeling &amp; AI Training Specialist</div>
+<div class="job-company">Outlier AI | Freelance</div>
+<div class="job-duration">2024 – Present</div>
+<ul>
+<li>Annotated and validated structured and unstructured datasets for AI/ML model training.</li>
+<li>Performed quality checks to ensure high-accuracy labeled data across NLP and classification tasks.</li>
+<li>Contributed to improving model performance by identifying inconsistencies in training datasets.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Salesforce Developer (Virtual)</div>
+<div class="job-company">Deloitte</div>
+<div class="job-duration">Jul 2023 – Sep 2023</div>
+<ul><li>CRM data architecture, data management, analytical dashboards for business metrics.</li></ul>
+</div>
+<div class="job-block">
+<div class="job-title">Technical Intern</div>
+<div class="job-company">Intugine | Bengaluru</div>
+<div class="job-duration">Dec 2023 – Jan 2024</div>
+<ul><li>Cleaned and prepared large logistics datasets using Python and SQL. Identified inefficiency patterns in trip data.</li></ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications</div>
+<div class="section-content">
+<span class="cert-item">SQL for Data Science — Coursera</span>
+<span class="cert-item">Oracle Academy: Database Foundations</span>
+<span class="cert-item">CCNAv7: Enterprise Networking, Security, and Automation — Cisco</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">10. Dushyant A.</div><div class="member-role">Senior Software Engineer — Power Platform</div></div>
+<div class="member-exp">4+ Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>Bachelor of Computer Applications (BCA)</strong></li>
+<li>Rajasthan University (Jun 2019 – May 2022)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>7 Microsoft certifications including Solution Architect Expert.</li>
+<li>Oracle Cloud GenAI Certified Professional.</li>
+<li>6+ enterprise-level Power Platform applications delivered.</li>
+<li>Pre-sales technical consulting experience.</li>
+<li>Integrated OpenAI, Azure OpenAI, and Copilot Studio into enterprise solutions.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Power Platform:</strong> <span class="tag tag-purple">PowerApps</span> <span class="tag tag-purple">Power Automate</span> <span class="tag tag-purple">Copilot Studio</span></div>
+<div><strong>Cloud:</strong> <span class="tag tag-blue">Azure Logic Apps</span> <span class="tag tag-blue">Azure Data Factory</span> <span class="tag tag-blue">Azure OpenAI</span> <span class="tag tag-blue">Azure DevOps</span></div>
+<div><strong>Other:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">SSMS</span> <span class="tag tag-purple">SharePoint Online</span> <span class="tag tag-purple">Dynamics 365</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Senior Software Engineer</div>
+<div class="job-company">Celebal Technologies Pvt Ltd</div>
+<div class="job-duration">Apr 2022 – Present</div>
+<ul>
+<li>Part of multiple presales activities to understand technical requirements and provide best solutions.</li>
+<li>Develop and maintain PowerApps applications in alignment with business requirements.</li>
+<li>Analyze complex technical issues and provide innovative solutions.</li>
+<li>Conduct thorough code reviews to maintain code quality.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Software Engineer</div>
+<div class="job-company">Celebal Technologies Pvt Ltd</div>
+<div class="job-duration">Dec 2020 – Apr 2022</div>
+<ul>
+<li>Conducted thorough testing, attended team meetings, supported troubleshooting of software-related problems.</li>
+<li>Demonstrated proactive approach to learning new technologies and coding practices.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Asset and Fund Management Apps</strong> (Oct 2024 – Feb 2025): PowerApps + Snowflake for a global Asset Management firm. Real-time Power BI visualization.</li>
+<li><strong>Asset Projection and Portfolio Planning Tool</strong> (Nov 2024 – Feb 2025): Automated Portfolio Simulation Analysis with audit trails.</li>
+<li><strong>Resume Ranking Application</strong> (Sep 2023 – Dec 2023): Integrated OpenAI's language model for skill/experience relevance assessment.</li>
+<li><strong>Warehouse Management Application</strong> (Mar 2023 – Jan 2025): Finance &amp; operations integration with 2D barcode scanning.</li>
+<li><strong>Risk Management System</strong> (Sep 2021 – Mar 2023): Custom Microservices backend, responsive design.</li>
+<li><strong>Inventory Management &amp; Attendance Application</strong> (Mar 2021 – Aug 2021): Geo-fenced attendance system with Background Timer.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications (7 Microsoft + 1 Oracle)</div>
+<div class="section-content">
+<span class="cert-item">Microsoft: Power Platform Solution Architect Expert</span>
+<span class="cert-item">Microsoft: Power Platform Developer Associate</span>
+<span class="cert-item">Microsoft: Power Platform Functional Consultant Associate</span>
+<span class="cert-item">Microsoft: Power Platform App Maker Associate</span>
+<span class="cert-item">Microsoft: Azure Fundamentals</span>
+<span class="cert-item">Microsoft: Power Platform Fundamentals</span>
+<span class="cert-item">Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">11. Shruti G.</div><div class="member-role">Software Developer — Full Stack &amp; AI Features</div></div>
+<div class="member-exp">~1.5 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Information Technology</strong> — GPA: 9.31/10</li>
+<li>Banasthali Vidyapith, Jaipur (2020–2024)</li>
+<li>Related Coursework: Data Structures &amp; Algorithms, OOP, Operating Systems</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li><strong>Deloitte Hackathon 2025 Winner</strong> — AI-driven performance review system.</li>
+<li>Built multi-agent AutoGen workflows and RAG-based context management in production.</li>
+<li>GPA 9.31/10 — top of class in IT department.</li>
+<li>Received Applause and Spot Awards at Deloitte for exceptional contributions.</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🔗 Competitive Programming</div>
+<div class="section-content links-section">
+<a href="https://www.naukri.com/code360/profile/ShrutiGahlaut" target="_blank">🏅 Code 360 (Coding Ninjas): ShrutiGahlaut</a>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">C++</span> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">JavaScript</span> <span class="tag tag-purple">SQL</span></div>
+<div><strong>Frameworks:</strong> <span class="tag tag-purple">ReactJS</span> <span class="tag tag-purple">Angular</span> <span class="tag tag-purple">ASP.NET Core Web APIs</span> <span class="tag tag-purple">FastAPI</span> <span class="tag tag-purple">LangGraph</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">Azure OpenAI</span> <span class="tag tag-green">AutoGen Multi-Agent</span> <span class="tag tag-green">RAG</span> <span class="tag tag-green">LangGraph</span> <span class="tag tag-green">LangFuse</span> <span class="tag tag-green">DeepEval</span></div>
+<div><strong>Databases:</strong> <span class="tag tag-blue">SQL Server</span> <span class="tag tag-blue">PostgreSQL</span> <span class="tag tag-blue">SQLite</span> <span class="tag tag-blue">Azure Cosmos DB (NoSQL)</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-blue">Git</span> <span class="tag tag-blue">GitHub</span> <span class="tag tag-blue">Azure DevOps Services</span> <span class="tag tag-blue">Swagger</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Software Developer</div>
+<div class="job-company">Deloitte USI | Hyderabad</div>
+<div class="job-duration">Aug 2024 – Present</div>
+<ul>
+<li>Full Stack Developer for internal Talent-Management applications supporting performance management and promotional cycles for senior leadership.</li>
+<li>Developed scalable, cloud-native business applications using REST APIs, Angular, and SQL Server following CI/CD practices.</li>
+<li>Utilized Azure DevOps for version control, sprint planning, CI/CD automation.</li>
+<li>Optimized SQL Server queries, stored procedures, and data models for large data volumes.</li>
+<li>Built AI-driven features for production applications using <strong>Python, FastAPI, LangGraph, and Azure OpenAI</strong>.</li>
+<li>Received <strong>Monetary awards (Applause and Spot Awards)</strong> for contributions to business applications.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Audio Performance Reviewer (Deloitte Hackathon 2025 Winner):</strong> AI-driven performance review using AutoGen multi-agent workflows. Multi-agent podcast pipeline (director, analyst, scriptwriter, tone-polisher). Integrated Azure Speech Service for TTS. Tech: ReactJS, Python, FastAPI, AutoGen, Azure Speech Service.</li>
+<li><strong>Performance Draft Creation Assistant (Innovation Challenge PoC):</strong> LLM-driven workflow engine using LangGraph for automated draft assessment summaries. Robust context-management with Chroma Vector DB and SQLite. LangFuse and DeepEval for LLM traces, latency, costs. Tech: ReactJS, Python, FastAPI, RAG, LangGraph, SQLite, Azure OpenAI.</li>
+</ul>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">12. Ajay S.</div><div class="member-role">Senior Software Engineer — Android / Backend</div></div>
+<div class="member-exp">~2.5 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Electrical Engineering</strong> — CGPA: 8.07</li>
+<li>National Institute of Technology (NIT), Silchar (2018–2022)</li>
+<li>Coursework: Data Structures, Algorithms, OOPS, Operating Systems, Design Patterns, Low Level Design</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li><strong>Samsung Software Competency Test</strong> — Advanced and Proficiency level cleared.</li>
+<li><strong>Samsung Excellence Award</strong> for the launch of Samsung Wallet in India on time.</li>
+<li>Won Hackathon organized by Digital Life Group at Samsung.</li>
+<li>End-to-end delivery of Samsung Wallet Generic Card feature.</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🔗 Competitive Programming</div>
+<div class="section-content links-section">
+<a href="https://leetcode.com/ajaysindolia" target="_blank">🏅 LeetCode: ajaysindolia</a>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Java</span> <span class="tag tag-purple">C/C++</span> <span class="tag tag-purple">Kotlin</span> <span class="tag tag-purple">HTML/CSS</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-blue">IntelliJ</span> <span class="tag tag-blue">VS Code</span> <span class="tag tag-blue">Android Studio</span> <span class="tag tag-blue">Eclipse</span> <span class="tag tag-blue">Gerrit</span></div>
+<div><strong>Frameworks:</strong> <span class="tag tag-purple">Spring Boot</span> <span class="tag tag-purple">Android SDK</span> <span class="tag tag-purple">REST APIs</span> <span class="tag tag-purple">MVVM</span> <span class="tag tag-purple">MySQL</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">TensorFlow</span> <span class="tag tag-green">Keras</span> <span class="tag tag-green">CNN</span> <span class="tag tag-green">AWS</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Senior Software Engineer</div>
+<div class="job-company">Samsung Research Institute | Bangalore</div>
+<div class="job-duration">Jul 2022 – Oct 2024</div>
+<ul>
+<li>Contributed to design, development, and maintenance of <strong>Samsung Wallet</strong> Android app modules for Galaxy Smartwatches (Java &amp; Kotlin).</li>
+<li>Engineered high-performance RESTful APIs using Spring Boot with microservices-based architectures.</li>
+<li>Designed scalable, performance-optimized MySQL database schemas and refactored slow queries.</li>
+<li>Successfully delivered the <strong>Generic Card feature</strong> — led end-to-end development.</li>
+<li>Handled loyalty card-related operations — managing, storing, and processing loyalty cards.</li>
+<li>Applied MVVM architecture to improve code modularity, scalability, and maintainability.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Technical Intern</div>
+<div class="job-company">Samsung Research Institute | Bangalore</div>
+<div class="job-duration">Jan 2022 – Jul 2022</div>
+<ul>
+<li>Hands-on experience with Java, OOP, and design patterns.</li>
+<li>Developed and tested Android applications using Java, Android SDK, Android Studio.</li>
+<li>Implemented JUnit test cases for improved reliability.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>My Space Android App:</strong> Kotlin, AWS, TensorFlow, Keras, CNN — ML-based image classification app with end-to-end integration. Efficient image sorting system for categorized folders.</li>
+</ul>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">13. Vaibhav P.</div><div class="member-role">Senior Software Engineer — Android / SmartThings</div></div>
+<div class="member-exp">3+ Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Electrical Engineering</strong> — CGPA: 8.48</li>
+<li>National Institute of Technology (NIT), Silchar (2018–2022)</li>
+<li>Coursework: Data Structures, Algorithms, OOPS, Computer Networks, DBMS, Machine Learning</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li><strong>Samsung Software Competency Test</strong> — Advanced and Proficiency level cleared.</li>
+<li>Full-stack developer for Samsung SmartThings — contributed to One UI 5.1 flagship releases.</li>
+<li>Led Java-to-Kotlin migration using Coroutines &amp; Flow.</li>
+<li>Resolved 70+ production defects.</li>
+<li>National Cadet Corps (NCC) — B and C Certificate Holder. Led Republic Day &amp; Independence Day parades at NIT Silchar.</li>
+<li>Finalist in NIT Silchar Robotics Competition (Tecnoesis).</li>
+<li>Secretary of GYANSAGAR (Non-Profit Community Development Organization).</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🔗 Competitive Programming</div>
+<div class="section-content links-section">
+<a href="https://leetcode.com/VaibhavPal" target="_blank">🏅 LeetCode: @VaibhavPal</a>
+<a href="https://codeforces.com/profile/VaibhavPal" target="_blank">🏅 CodeForces: @VaibhavPal</a>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Java</span> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">C/C++</span> <span class="tag tag-purple">Kotlin</span> <span class="tag tag-purple">HTML/CSS</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-blue">IntelliJ</span> <span class="tag tag-blue">VS Code</span> <span class="tag tag-blue">Eclipse</span> <span class="tag tag-blue">Gerrit</span></div>
+<div><strong>Technologies:</strong> <span class="tag tag-purple">Android SDK</span> <span class="tag tag-purple">Jetpack</span> <span class="tag tag-purple">MVVM</span> <span class="tag tag-purple">REST APIs</span> <span class="tag tag-purple">Git</span> <span class="tag tag-purple">Jenkins</span> <span class="tag tag-purple">Maven</span> <span class="tag tag-purple">Linux</span> <span class="tag tag-purple">Agile/Scrum</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Senior Software Engineer</div>
+<div class="job-company">Samsung | Bangalore</div>
+<div class="job-duration">Jul 2022 – Present</div>
+<ul>
+<li>Full-stack developer for <strong>Samsung SmartThings app</strong> — Kotlin for UI, Java &amp; AIDL for backend APIs.</li>
+<li>Designed and developed <strong>Music Share feature</strong> in Media Panel, Plugin Platform Features, and Companion APIs for third-party apps using IPC.</li>
+<li>Implemented UI/UX enhancements using XML layouts, Material Design, MediaSession/MediaController APIs, including <strong>Flip cover screen support</strong>, contributing to <strong>One UI 5.1 / 5.1.1 flagship releases</strong>.</li>
+<li>Led migration of legacy Android codebase from <strong>Java/RxJava to Kotlin Coroutines and Flow</strong>, improving UI responsiveness and performance.</li>
+<li>Developed features for SmartThings, Media Output, and Companion modules using Kotlin, Jetpack, MVVM.</li>
+<li>Resolved <strong>70+ Android production and SVT defects</strong> using Android Studio, Logcat, Memory/CPU Profilers.</li>
+<li>Contributed ideation proposals (Mosaic and IPR portals) adopted for product and platform improvements.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Technical Intern</div>
+<div class="job-company">Samsung | Bangalore</div>
+<div class="job-duration">Jan 2022 – Jul 2022</div>
+<ul>
+<li>Engineered a cross-platform mobile application leveraging IoT sensor data from smartphones, cars, and wearables, achieving <strong>40% increase in energy efficiency</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Quarantine Center Management System:</strong> System for maintaining patient records for a quarantine center — track and manage COVID patient details with efficient data storage and access.</li>
+</ul>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">14. Sarabjeet S.</div><div class="member-role">Software Engineer — Dell Technologies</div></div>
+<div class="member-exp">~1.5 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech</strong> (EQF Level 6)</li>
+<li>Manipal University Jaipur (Jul 2021 – Jul 2025)</li>
+<li>Higher Secondary — CISCE (Jul 2019 – Jul 2021)</li>
+<li><strong>Multiple Dean's List Awards</strong> — highest GPA during undergraduate program.</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li><strong>Google Summer of Code contributor</strong> (OpenStreetMap).</li>
+<li>Built GenAI-powered compliance tool — reduced analysis from 1-2 days to 5-8 minutes.</li>
+<li>Multiple Dean's List awards for highest GPA.</li>
+<li>Polygon Guild Jaipur working team member.</li>
+<li>Humanitarian OpenStreetMap Team mapping volunteer.</li>
+<li>BREADS volunteer — residential school for underprivileged children.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">Java</span> <span class="tag tag-purple">C</span> <span class="tag tag-purple">SQL</span> <span class="tag tag-purple">HTML/CSS/JavaScript</span></div>
+<div><strong>Frameworks:</strong> <span class="tag tag-purple">React</span> <span class="tag tag-purple">Angular</span> <span class="tag tag-purple">Tailwind</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">AI/ML</span> <span class="tag tag-green">LLMs Fine-tuning</span> <span class="tag tag-green">Model Training</span></div>
+<div><strong>DevOps:</strong> <span class="tag tag-blue">Docker</span> <span class="tag tag-blue">Jira</span> <span class="tag tag-blue">Git</span> <span class="tag tag-blue">Linux</span> <span class="tag tag-blue">Windows</span></div>
+<div><strong>Soft Skills:</strong> <span class="tag tag-orange">Problem Solving</span> <span class="tag tag-orange">Communication</span> <span class="tag tag-orange">Leadership</span> <span class="tag tag-orange">Time Management</span> <span class="tag tag-orange">OOP Principles</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Software Engineer</div>
+<div class="job-company">Dell Technologies | Bangalore</div>
+<div class="job-duration">Jul 2025 – Present</div>
+<ul>
+<li>Design and implement automation blueprints for distributed cluster management — streamlined node addition/removal.</li>
+<li>Develop and maintain complex, interrelated backend APIs supporting service-to-service communication with modular design.</li>
+<li>Contribute to node licensing subsystem — license validation and lifecycle management.</li>
+<li>Participate in technical ideation for automation and AI-inspired solutions.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Software Engineer Intern</div>
+<div class="job-company">Dell Technologies | Bangalore</div>
+<div class="job-duration">Jul 2024 – Jun 2025</div>
+<ul>
+<li>Developed a <strong>GenAI-powered tool using NLP and LLMs</strong> to perform semantic analysis of configuration changes across STIG compliance rules.</li>
+<li>Implemented embedding-based rule mapping and deviation analysis.</li>
+<li>Generated automated remediation insights and structured reports.</li>
+<li><strong>Reduced manual analysis time from 1-2 days to approximately 5-8 minutes.</strong></li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Open Source Contributor — Google Summer of Code</div>
+<div class="job-company">OpenStreetMap (JOSM/Vespucci)</div>
+<div class="job-duration">May 2023 – Aug 2023</div>
+<ul>
+<li>Integrated advanced filtering and preset functionality from Vespucci into JOSM.</li>
+<li>Extended preset capabilities with deprecated attributes, region-based inclusion/exclusion, and alternative tagging.</li>
+<li>Collaborated with global open-source community to test, debug, and refine features.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>FactFlow:</strong> Interactive web platform for sharing quotes, facts, and reviews with CRUD operations, JWT-auth email authentication, like count system, and comment section.</li>
+<li><strong>RoutePlanner:</strong> Web-based travel route planner using Leaflet.js and OpenStreetMap API for detailed mapping solutions.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications</div>
+<div class="section-content">
+<span class="cert-item">Red Hat System Administration I (RH124)</span>
+<span class="cert-item">Red Hat System Administration II (RH134)</span>
+<span class="cert-item">CISCO Introduction to Packet Tracer</span>
+<span class="cert-item">AI@Dell: Capability Academy</span>
+<span class="cert-item">Jira Foundations 101</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">15. Ayush A.</div><div class="member-role">Senior Consultant (Application Engineer II) — Supply Chain</div></div>
+<div class="member-exp">3+ Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>B.Tech in Electrical Engineering</strong> — CGPA: 8.13/10</li>
+<li>National Institute of Technology (NIT), Silchar (Aug 2018 – May 2022)</li>
+<li>Higher Secondary — J.L College Hajipur, Bihar (2015–2017)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li>3+ years implementing supply planning solutions for global FMCG companies (Danone, Henkel, Johnsonville).</li>
+<li>Multiple o9 platform certifications — Supply Chain Management expert.</li>
+<li>Prior Data Science Analyst at Tiger Analytics.</li>
+<li>Led sprint timelines and client training for Go-Live phases.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">C/C++</span> <span class="tag tag-purple">SQL</span> <span class="tag tag-purple">JavaScript</span> <span class="tag tag-purple">HTML/CSS</span></div>
+<div><strong>Supply Chain:</strong> <span class="tag tag-green">Supply Planning</span> <span class="tag tag-green">Demand Planning</span> <span class="tag tag-green">Distribution Planning</span> <span class="tag tag-green">End-to-End SCM</span></div>
+<div><strong>Technical:</strong> <span class="tag tag-blue">Integration</span> <span class="tag tag-blue">SSIS</span> <span class="tag tag-blue">IBPL</span> <span class="tag tag-blue">Procedures</span> <span class="tag tag-blue">o9 Solver</span> <span class="tag tag-blue">UI Development</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Senior Consultant (Application Engineer II)</div>
+<div class="job-company">O9 Solutions | Bangalore</div>
+<div class="job-duration">Oct 2022 – Present</div>
+<ul>
+<li>Developed and implemented process interaction framework across end-to-end project lifecycles using Python.</li>
+<li>Co-ordinated and harmonized tasks across Demand Planning implementation team for sprint timelines.</li>
+<li>Provided functional and technical consulting for end-to-end supply chain optimization (Agile methodology).</li>
+<li>Contributed to production campaign planning, Integration, SSIS, solver, report creation, platform updates.</li>
+<li>Trained clients on new tools during Go Live phase. Onboarded new employees on Supply/Demand Planning.</li>
+<li>Monitored daily batch operations and performed installation setup configurations across all environments.</li>
+<li><strong>Clients served: Danone, Henkel, Johnsonville.</strong></li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Analyst - Data Science</div>
+<div class="job-company">Tiger Analytics | Chennai</div>
+<div class="job-duration">Jul 2022 – Oct 2022</div>
+<ul>
+<li>Applied structured, objective-driven data analysis aligned with key business goals and KPIs.</li>
+<li>Collaborated with development team to debug and fix web application issues.</li>
+<li>Worked with cross-functional teams to improve processes and meet project goals on time.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>Quarantine Center Management System:</strong> C++, Data Structures, Algorithms — Well-maintained records for COVID-19 quarantine system. OOP Concepts, Inheritance, DS.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications</div>
+<div class="section-content">
+<span class="cert-item">o9 Project Implementation Methodology</span>
+<span class="cert-item">Technical Deep Dive into Supply Planning Core Solution</span>
+<span class="cert-item">o9 Platform Technical Configuration — Level I and II</span>
+<span class="cert-item">Functional Insights into Supply Planning Core Solution</span>
+<span class="cert-item">o9 Knowledge Masters in Supply Chain Management</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">16. Ayush K.</div><div class="member-role">Masters Student (Cybersecurity &amp; AI) | Full Stack Developer</div></div>
+<div class="member-exp">~1 Year Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>Masters in Cybersecurity and AI</strong> (EQF Level 7)</li>
+<li>Radboud University, Nijmegen, Netherlands (Sep 2025 – Current)</li>
+<li><strong>B.Tech in Information Technology</strong> — GPA: 4.18/5.0</li>
+<li>Manipal University Jaipur (Sep 2021 – Aug 2025)</li>
+<li>12th — Dr Dy Patil Pushpalata Patil International School, Patna (95.6 equivalent)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights</div>
+<div class="section-content">
+<ul>
+<li><strong>Dean's List Certification</strong> — Highest GPA in the IT department (4th semester).</li>
+<li>400 LeetCode problems solved, contest rating 1521.</li>
+<li>Built AI-powered medical report summarizer with GPT-4 and RAG pipeline.</li>
+<li>Code Repair Agent improving bug detection by 23%.</li>
+<li>Pursuing Masters in Cybersecurity &amp; AI at Radboud University (Netherlands).</li>
+<li>Polygon Guild Jaipur Working Team — Blockchain community events.</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Python</span> <span class="tag tag-purple">C/C++/C#</span> <span class="tag tag-purple">Java</span> <span class="tag tag-purple">JavaScript</span> <span class="tag tag-purple">PHP</span> <span class="tag tag-purple">SQL</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">TensorFlow</span> <span class="tag tag-green">Keras</span> <span class="tag tag-green">PyTorch</span> <span class="tag tag-green">Scikit-learn</span> <span class="tag tag-green">OpenCV</span> <span class="tag tag-green">XGBoost</span> <span class="tag tag-green">Transformers</span></div>
+<div><strong>Deep Learning:</strong> <span class="tag tag-green">CNNs</span> <span class="tag tag-green">YOLO</span> <span class="tag tag-green">ResNet</span> <span class="tag tag-green">RNN</span> <span class="tag tag-green">LSTM</span></div>
+<div><strong>MLOps:</strong> <span class="tag tag-blue">Docker</span> <span class="tag tag-blue">Kubernetes</span> <span class="tag tag-blue">MLflow</span> <span class="tag tag-blue">AWS S3</span></div>
+<div><strong>Web:</strong> <span class="tag tag-purple">MERN Stack</span> <span class="tag tag-purple">LAMP Stack</span> <span class="tag tag-purple">React</span> <span class="tag tag-purple">NodeJS</span> <span class="tag tag-purple">Bootstrap</span> <span class="tag tag-purple">Tailwind</span></div>
+<div><strong>Platforms:</strong> <span class="tag tag-blue">Linux</span> <span class="tag tag-blue">AWS</span> <span class="tag tag-blue">Salesforce</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">Tech Intern — Backend Developer</div>
+<div class="job-company">ANS Commerce (Flipkart) | Gurgaon</div>
+<div class="job-duration">May 2023 – Aug 2023</div>
+<ul>
+<li>Worked on the "Kartify" project as a backend developer using the LAMP stack.</li>
+<li>Built reports panel for daily dispatch, return order management, monthly sales, and inventory management.</li>
+<li>Solved multiple Jira tickets, updating and enhancing e-commerce websites.</li>
+<li>Technologies: PHP, MySQL, jQuery, Elasticsearch, Redis, Linux, JIRA.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🚀 Projects</div>
+<div class="section-content">
+<ul>
+<li><strong>AI-Powered Medical Report Summarizer:</strong> Python, LangChain, Hugging Face, GPT-4, Pinecone, FastAPI, Streamlit — OCR (Tesseract, EasyOCR) with LLMs (GPT-4, BioGPT, ClinicalBERT). RAG pipeline with LangChain and Pinecone.</li>
+<li><strong>Code Repair &amp; Optimization Agent:</strong> GPT-4, LangChain, CodeBERT, FastAPI, Docker — AI-powered agent for syntax/logical error detection. RAG with FAISS/Pinecone. Improved bug detection accuracy by <strong>23%</strong>. CI/CD integration.</li>
+<li><strong>Workflow Board:</strong> MERN stack — React app for workflow visualization, 27% efficiency boost, 90%+ accuracy data filtering.</li>
+<li><strong>DevLaunch:</strong> React (Material UI), NodeJS, Express — User authentication, third-party API integration, 90% onboarding success rate.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="section-title">📜 Certifications</div>
+<div class="section-content">
+<span class="cert-item">VMware IT Virtualization Core Technical Skills</span>
+<span class="cert-item">Introduction to Packet Tracer — Cisco</span>
+<span class="cert-item">Oracle Cloud Infrastructure Foundations I</span>
+<span class="cert-item">Red Hat System Administration I (RH124)</span>
+</div>
+</div>
+</div></div><div class="member-card">
+<div class="member-header">
+<div><div class="member-name">17. Shilpi D.</div><div class="member-role">AI Trainer — Terminal Bench, OSWorld, Python</div></div>
+<div class="member-exp">~2 Years Experience</div>
+</div><div class="card-body">
+<div class="grid-2"><div><div class="section">
+<div class="section-title">🎓 Education</div>
+<div class="section-content">
+<ul>
+<li><strong>Bachelor of Business Administration</strong> — CGPA: 8.4</li>
+<li>SRM University AP, Amravati, Andhra Pradesh (Jun 2024)</li>
+<li>Class XII CBSE — 95.6% (Vidyagyan School, Bulandshahr, UP)</li>
+<li>Class X CBSE — 93.8% (Vidyagyan School, Bulandshahr, UP)</li>
+</ul>
+</div>
+</div><div class="section">
+<div class="section-title">🏆 Key Highlights &amp; Achievements</div>
+<div class="section-content">
+<ul>
+<li>Oracle Tier Contributor (Top 1%) at Outlier — elite recognition for AI evaluation quality.</li>
+<li>Senior Reviewer leading LLM code generation audits — improved rubric accuracy by 50%.</li>
+<li>Designed OS-level and Terminal-Bench evaluation tasks exposing SOTA model failures.</li>
+<li>Class XII CBSE — 95.6% | Class X CBSE — 93.8%.</li>
+<li><strong>Silver Medalist</strong> — National-level Basketball at Udgam 23 (SRM University AP).</li>
+<li><strong>Silver Medalist</strong> — National-level Youth Festival Basketball at Vignan Mahotsav 23.</li>
+<li><strong>Bronze Medalist</strong> — CBSE Cluster Under-17 Basketball Competition 2019-20.</li>
+<li><strong>Silver Medalist</strong> — District School Basketball League 2018 (Under-17).</li>
+</ul>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title">💻 Technical Skills</div>
+<div class="section-content">
+<div><strong>Languages:</strong> <span class="tag tag-purple">Python</span></div>
+<div><strong>AI/ML:</strong> <span class="tag tag-green">Hugging Face Transformers</span> <span class="tag tag-green">RLHF</span> <span class="tag tag-green">SFT</span> <span class="tag tag-green">Prompt Engineering</span> <span class="tag tag-green">Model Evaluation</span> <span class="tag tag-green">Bias Reduction</span></div>
+<div><strong>Technologies:</strong> <span class="tag tag-blue">AWS</span> <span class="tag tag-blue">Cloud</span> <span class="tag tag-blue">AI</span> <span class="tag tag-blue">GenAI</span></div>
+<div><strong>Tools:</strong> <span class="tag tag-purple">VS Code</span> <span class="tag tag-purple">Cursor</span> <span class="tag tag-purple">Git</span> <span class="tag tag-purple">GitHub</span></div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">💼 Work Experience</div>
+<div class="section-content">
+<div class="job-block">
+<div class="job-title">AI Trainer — Terminal Bench, OSWorld, Python</div>
+<div class="job-company">Turing | Remote</div>
+<div class="job-duration">Dec 2025 – Present</div>
+<ul>
+<li>Designed OS-level and terminal interaction evaluation tasks (Bash, Python, GUI automation) that reliably expose failure modes in SOTA agent models.</li>
+<li>Generate high-signal feedback for improving real-world system reasoning and tool use.</li>
+<li>Audited and refined tasks across CLI and GUI evaluation frameworks to ensure deterministic execution, evaluator-oracle alignment, and robustness across distributed evaluation pipelines.</li>
+<li>Directly improved task reliability and training effectiveness.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">AI Trainer — Oracle Tier Contributor (Top 1%)</div>
+<div class="job-company">Outlier | Remote</div>
+<div class="job-duration">Oct 2025 – Present</div>
+<ul>
+<li>Ranked in the <strong>top 1% (Oracle Tier Contributor)</strong> for high-quality AI evaluations across prompt engineering, rubric design, and failure-mode analysis.</li>
+<li>Served as <strong>Senior Reviewer</strong>, leading audits on LLM code generation, scalability, concurrency, and control flow.</li>
+<li>Improved rubric accuracy by <strong>50%</strong>.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Senior Learning Consultant</div>
+<div class="job-company">Great Learning | Bangalore</div>
+<div class="job-duration">May 2025 – Oct 2025</div>
+<ul>
+<li>Conducted data-driven career diagnostics for learners by analyzing skill gaps, technical backgrounds, and learning goals.</li>
+<li>Collaborated with cross-functional product and academic teams to translate customer requirements into tailored technical learning pathways.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Business Development Trainee</div>
+<div class="job-company">Intellipaat | Bangalore</div>
+<div class="job-duration">Jul 2024 – May 2025</div>
+<ul>
+<li>Consistently exceeded sales targets selling professional courses. High conversion rates and customer satisfaction.</li>
+<li>Demonstrated exceptional ability to understand customer needs and close high-value deals.</li>
+</ul>
+</div>
+<div class="job-block">
+<div class="job-title">Data Analyst — Python, NumPy, Pandas</div>
+<div class="job-company">CfBT Education Services | Hyderabad</div>
+<div class="job-duration">Jun 2023 – Aug 2023</div>
+<ul>
+<li>Conducted data analysis, cleaning, report generation, and data entry using MS Excel, MS Word, Charts.</li>
+<li>Produced 3 comprehensive reports per district for Karnataka skill demand survey, employing statistical measures and actionable insights.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="footer"><div class="footer-brand">COGNYZER</div><p><a href="https://www.cognyzer.com" target="_blank">www.cognyzer.com</a></p><div class="footer-divider"></div><p>Confidential Team Portfolio — February 2026</p><p class="footer-note">Personal contact information has been intentionally excluded to protect team members' privacy.</p><p class="footer-note" style="margin-top:12px">To share: Open in browser → Ctrl/Cmd + P → Save as PDF</p></div></div></body>
+</html>
